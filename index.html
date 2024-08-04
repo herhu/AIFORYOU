@@ -17,6 +17,11 @@
             scroll-behavior: smooth;
         }
 
+        .dark-mode {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
         .hero {
             position: relative;
             height: 100vh;
@@ -41,13 +46,13 @@
         }
 
         .content h1 {
-            font-size: 4rem;
+            font-size: 3rem;
             margin-bottom: 0.5rem;
             color: #8e24aa;
         }
 
         .content .slogan {
-            font-size: 2rem;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
             color: #00bfa5;
         }
@@ -117,12 +122,14 @@
         .back-to-top {
             position: fixed;
             bottom: 20px;
-            right: 20px;
+            left: 20px;
             display: none;
+            align-items: center;
+            justify-content: center;
         }
 
         .back-to-top.show {
-            display: block;
+            display: flex;
         }
 
         .navbar {
@@ -136,6 +143,11 @@
 
         .navbar a {
             color: #e0e0e0;
+        }
+
+        .dark-mode .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            color: #333;
         }
 
         .loading-spinner {
@@ -181,13 +193,13 @@
         }
 
         .stat h3 {
-            font-size: 3rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
             color: #8e24aa;
         }
 
         .stat p {
-            font-size: 1.25rem;
+            font-size: 1rem;
         }
 
         .call-to-action {
@@ -200,7 +212,7 @@
         }
 
         .call-to-action h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
         }
 
@@ -254,6 +266,48 @@
                 transform: translateY(-5px);
             }
         }
+
+        .breadcrumbs {
+            padding: 1rem 0;
+            background-color: #1e1e1e;
+            color: #fff;
+            text-align: center;
+        }
+
+        .breadcrumbs a {
+            color: #00bfa5;
+            text-decoration: none;
+        }
+
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        @media (min-width: 768px) {
+            .content h1 {
+                font-size: 4rem;
+            }
+
+            .content .slogan {
+                font-size: 2rem;
+            }
+
+            .stat h3 {
+                font-size: 3rem;
+            }
+
+            .stat p {
+                font-size: 1.25rem;
+            }
+
+            .call-to-action h2 {
+                font-size: 2.5rem;
+            }
+
+            .call-to-action p {
+                font-size: 1.25rem;
+            }
+        }
     </style>
 </head>
 
@@ -266,14 +320,33 @@
     <!-- Navigation Bar -->
     <nav class="navbar p-4 flex justify-between items-center">
         <a href="#" class="text-xl font-bold">AI For You</a>
-        <div>
+        <div class="hidden md:flex">
             <a href="#about" class="text-lg mx-4">About Us</a>
             <a href="#services" class="text-lg mx-4">Services</a>
             <a href="#use-cases" class="text-lg mx-4">Use Cases</a>
             <a href="#pricing" class="text-lg mx-4">Pricing</a>
             <a href="#contact" class="text-lg mx-4">Contact</a>
+            <button id="dark-mode-toggle" class="text-lg mx-4">Dark Mode</button>
+        </div>
+        <div class="md:hidden">
+            <button id="menu-toggle" class="text-lg"><i class="fas fa-bars"></i></button>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden">
+        <a href="#about" class="block text-lg p-4">About Us</a>
+        <a href="#services" class="block text-lg p-4">Services</a>
+        <a href="#use-cases" class="block text-lg p-4">Use Cases</a>
+        <a href="#pricing" class="block text-lg p-4">Pricing</a>
+        <a href="#contact" class="block text-lg p-4">Contact</a>
+        <button id="dark-mode-toggle-mobile" class="block text-lg p-4">Dark Mode</button>
+    </div>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <a href="#">Home</a> &gt; <span id="breadcrumb-current">Home</span>
+    </div>
 
     <!-- Full-screen Header -->
     <header class="hero min-h-screen flex items-center justify-center text-white relative">
@@ -458,7 +531,7 @@
     </div>
 
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top btn btn-primary fixed bottom-8 right-8">Top</a>
+    <a href="#" class="back-to-top btn btn-primary fixed bottom-8 left-8 flex items-center justify-center">Top</a>
 
     <!-- Chatbot Widget -->
     <div id="chatbot" class="fixed bottom-4 right-4">
@@ -477,6 +550,11 @@
 
             const servicesSection = $('.services');
             const backToTopButton = $('.back-to-top');
+            const darkModeToggle = $('#dark-mode-toggle');
+            const darkModeToggleMobile = $('#dark-mode-toggle-mobile');
+            const menuToggle = $('#menu-toggle');
+            const mobileMenu = $('#mobile-menu');
+            const breadcrumbCurrent = $('#breadcrumb-current');
 
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
@@ -507,13 +585,41 @@
                 alert('Chatbot is under development!');
             });
 
+            // Dark Mode Toggle
+            darkModeToggle.click(function () {
+                $('body').toggleClass('dark-mode');
+            });
+
+            darkModeToggleMobile.click(function () {
+                $('body').toggleClass('dark-mode');
+            });
+
+            // Mobile Menu Toggle
+            menuToggle.click(function () {
+                mobileMenu.toggleClass('hidden');
+            });
+
+            // Breadcrumbs Update
+            $(document).on('scroll', function () {
+                let scrollPos = $(document).scrollTop();
+                $('nav a').each(function () {
+                    let currLink = $(this);
+                    let refElement = $(currLink.attr("href"));
+                    if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                        breadcrumbCurrent.text(currLink.text());
+                    }
+                });
+            });
+
             // Testimonials Carousel
             $('.testimonial-carousel').slick({
                 dots: true,
                 infinite: true,
                 speed: 500,
                 slidesToShow: 1,
-                adaptiveHeight: true
+                adaptiveHeight: true,
+                autoplay: true,
+                autoplaySpeed: 3000 // Slides will change every 3 seconds
             });
 
             // Animated Statistics
