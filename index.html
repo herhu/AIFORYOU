@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI For You</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.15.0/dist/full.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            scroll-behavior: smooth;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .hero video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .content h1,
+        .content .slogan,
+        .content .btn-primary {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .content h1 {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            color: #8e24aa;
+        }
+
+        .content .slogan {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #00bfa5;
+        }
+
+        .content .btn-primary {
+            background-color: #00bfa5;
+            color: #121212;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.25rem;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .content .btn-primary:hover {
+            background-color: #00796b;
+            transform: scale(1.05);
+        }
+
+        .service,
+        .use-case,
+        .pricing-plan {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .service:hover,
+        .use-case:hover,
+        .pricing-plan:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+        }
+
+        .back-to-top.show {
+            display: block;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar a {
+            color: #e0e0e0;
+        }
+
+        .loading-spinner {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+        .loading-spinner.show {
+            display: block;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(90deg, rgba(142, 36, 170, 0.7) 0%, rgba(0, 191, 165, 0.7) 100%);
+            background-size: 200% 200%;
+            animation: gradientAnimation 15s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .statistics {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 4rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat h3 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #8e24aa;
+        }
+
+        .stat p {
+            font-size: 1.25rem;
+        }
+
+        .call-to-action {
+            background-color: #00bfa5;
+            color: #121212;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-radius: 0.25rem;
+            margin-top: 4rem;
+        }
+
+        .call-to-action h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .call-to-action p {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .call-to-action .btn {
+            background-color: #121212;
+            color: #00bfa5;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.25rem;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .call-to-action .btn:hover {
+            background-color: #1c1c1c;
+            transform: scale(1.05);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            cursor: pointer;
+        }
+
+        .scroll-indicator i {
+            font-size: 2rem;
+            color: #fff;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loading Spinner -->
+    <div class="loading-spinner show">
+        <div class="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-32 w-32"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar p-4 flex justify-between items-center">
+        <a href="#" class="text-xl font-bold">AI For You</a>
+        <div>
+            <a href="#about" class="text-lg mx-4">About Us</a>
+            <a href="#services" class="text-lg mx-4">Services</a>
+            <a href="#use-cases" class="text-lg mx-4">Use Cases</a>
+            <a href="#pricing" class="text-lg mx-4">Pricing</a>
+            <a href="#contact" class="text-lg mx-4">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Full-screen Header -->
+    <header class="hero min-h-screen flex items-center justify-center text-white relative">
+        <video autoplay muted loop>
+            <source src="https://www.videvo.net/videvo_files/converted/2013_08/preview/Blue_Rays_Videvo.mp428342.webm" type="video/webm">
+        </video>
+        <div class="content text-center z-10">
+            <h1 class="text-6xl font-bold">AI For YOU</h1>
+            <p class="slogan text-3xl mt-4">AGENCY</p>
+            <a href="#services" class="btn-primary mt-6">Explore Services</a>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-angle-down"></i>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container mx-auto p-6">
+        <main>
+            <!-- Introduction Section -->
+            <section id="about" class="intro my-16 text-center gradient-bg rounded-lg p-6">
+                <h2 class="text-4xl font-bold mb-6">About Us</h2>
+                <p class="text-lg mb-6">Welcome to AI For You! We offer personalized GPTs and advanced services using machine learning and deep learning models. Our mission is to make AI accessible and beneficial for everyone.</p>
+                <a href="#services" class="btn btn-primary">Learn More</a>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services" class="services grid grid-cols-1 md:grid-cols-3 gap-8 my-16">
+                <div class="service p-6 bg-gray-900 rounded-lg shadow-md tooltip">
+                    <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-robot"></i> Personalized GPTs</h3>
+                    <p>Create your own GPT tailored to your needs with ease.</p>
+                    <span class="tooltiptext">Click to learn more</span>
+                </div>
+                <div class="service p-6 bg-gray-900 rounded-lg shadow-md tooltip">
+                    <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-brain"></i> Machine Learning Services</h3>
+                    <p>Leverage our expertise in machine learning to gain insights and predictions.</p>
+                    <span class="tooltiptext">Click to learn more</span>
+                </div>
+                <div class="service p-6 bg-gray-900 rounded-lg shadow-md tooltip">
+                    <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-project-diagram"></i> Deep Learning Models</h3>
+                    <p>Utilize advanced deep learning models for more complex and accurate predictions.</p>
+                    <span class="tooltiptext">Click to learn more</span>
+                </div>
+            </section>
+
+            <!-- Use Cases Section -->
+            <section id="use-cases" class="use-cases my-16 text-center">
+                <h2 class="text-4xl font-bold mb-6">Use Cases</h2>
+                <div class="use-case mb-6 p-6 bg-gray-900 rounded-lg shadow-md">
+                    <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-headset"></i> Customer Support Automation</h3>
+                    <p>Deploy GPTs to automate customer support, providing instant and accurate responses to common queries.</p>
+                </div>
+                <div class="use-case mb-6 p-6 bg-gray-900 rounded-lg shadow-md">
+                    <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-chart-line"></i> Market Analysis</h3>
+                    <p>Utilize machine learning models to analyze market trends and predict future movements.</p>
+                </div>
+                <div class="use-case mb-6 p-6 bg-gray-900 rounded-lg shadow-md">
+                    <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-recommend"></i> Personalized Recommendations</h3>
+                    <p>Implement deep learning algorithms to offer personalized product or content recommendations to users.</p>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section id="pricing" class="pricing my-16 text-center">
+                <h2 class="text-4xl font-bold mb-6">Pricing</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="pricing-plan p-6 bg-gray-900 rounded-lg shadow-md">
+                        <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-robot"></i> Basic</h3>
+                        <p class="text-xl mb-4">$29/month</p>
+                        <ul class="list-disc list-inside text-left mb-4">
+                            <li>Personalized GPTs</li>
+                            <li>10,000 API calls</li>
+                            <li>Email support</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Sign Up</a>
+                    </div>
+                    <div class="pricing-plan p-6 bg-gray-900 rounded-lg shadow-md">
+                        <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-brain"></i> Pro</h3>
+                        <p class="text-xl mb-4">$99/month</p>
+                        <ul class="list-disc list-inside text-left mb-4">
+                            <li>Machine Learning Services</li>
+                            <li>100,000 API calls</li>
+                            <li>Priority support</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Sign Up</a>
+                    </div>
+                    <div class="pricing-plan p-6 bg-gray-900 rounded-lg shadow-md">
+                        <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-project-diagram"></i> Enterprise</h3>
+                        <p class="text-xl mb-4">$299/month</p>
+                        <ul class="list-disc list-inside text-left mb-4">
+                            <li>Deep Learning Models</li>
+                            <li>Unlimited API calls</li>
+                            <li>24/7 support</li>
+                            <li>Dedicated account manager</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Sign Up</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section class="testimonials my-16 text-center gradient-bg rounded-lg p-6">
+                <h2 class="text-4xl font-bold mb-6">Testimonials</h2>
+                <div class="testimonial-carousel">
+                    <div class="testimonial p-6 bg-gray-900 rounded-lg shadow-md">
+                        <p class="text-lg mb-4">"AI For You has transformed our customer support system. The personalized GPTs are incredibly accurate and efficient!"</p>
+                        <p class="font-bold text-teal-400">- Jane Doe, CEO of TechCorp</p>
+                    </div>
+                    <div class="testimonial p-6 bg-gray-900 rounded-lg shadow-md">
+                        <p class="text-lg mb-4">"The machine learning services provided by AI For You have given us valuable insights into market trends. Highly recommend!"</p>
+                        <p class="font-bold text-teal-400">- John Smith, Marketing Director of MarketMinds</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Statistics Section -->
+            <section class="statistics my-16 text-center">
+                <div class="stat">
+                    <h3 class="text-4xl font-bold" data-count="150">0</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat">
+                    <h3 class="text-4xl font-bold" data-count="120">0</h3>
+                    <p>Satisfied Clients</p>
+                </div>
+                <div class="stat">
+                    <h3 class="text-4xl font-bold" data-count="10">0</h3>
+                    <p>Years of Experience</p>
+                </div>
+            </section>
+
+            <!-- Call to Action Section -->
+            <section class="call-to-action">
+                <h2>Ready to Elevate Your Business?</h2>
+                <p>Contact us today to see how our AI solutions can help your business grow.</p>
+                <a href="#contact" class="btn">Get in Touch</a>
+            </section>
+
+            <!-- Contact Form -->
+            <section id="contact" class="contact my-16 text-center gradient-bg rounded-lg p-6">
+                <h2 class="text-4xl font-bold mb-6">Contact Us</h2>
+                <form class="max-w-xl mx-auto bg-gray-900 p-6 rounded-lg shadow-md">
+                    <div class="mb-4">
+                        <label for="name" class="block text-left text-gray-300">Name</label>
+                        <input type="text" id="name" class="w-full p-2 border border-gray-600 rounded mt-2 bg-gray-800 text-white" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-left text-gray-300">Email</label>
+                        <input type="email" id="email" class="w-full p-2 border border-gray-600 rounded mt-2 bg-gray-800 text-white" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-left text-gray-300">Message</label>
+                        <textarea id="message" class="w-full p-2 border border-gray-600 rounded mt-2 bg-gray-800 text-white" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </section>
+
+            <!-- Newsletter Signup Form -->
+            <section class="newsletter my-16 text-center gradient-bg rounded-lg p-6">
+                <h2 class="text-4xl font-bold mb-6">Stay Updated</h2>
+                <p class="text-lg mb-6">Sign up for our newsletter to get the latest updates and news.</p>
+                <form class="max-w-lg mx-auto bg-gray-900 p-6 rounded-lg shadow-md">
+                    <div class="mb-4">
+                        <input type="email" id="newsletter-email" class="w-full p-2 border border-gray-600 rounded mt-2 bg-gray-800 text-white" placeholder="Your Email" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="py-6 text-center bg-gray-900 text-gray-400">
+            <p>&copy; 2024 AI For You. All rights reserved.</p>
+            <div class="social-icons mt-4">
+                <a href="#" class="text-lg mx-2"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-lg mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-lg mx-2"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-lg mx-2"><i class="fab fa-instagram"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top btn btn-primary fixed bottom-8 right-8">Top</a>
+
+    <!-- Chatbot Widget -->
+    <div id="chatbot" class="fixed bottom-4 right-4">
+        <button class="btn btn-circle btn-primary">
+            <i class="fas fa-comments"></i>
+        </button>
+    </div>
+
+    <!-- JavaScript for Enhancements -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Hide loading spinner
+            $('.loading-spinner').removeClass('show');
+
+            const servicesSection = $('.services');
+            const backToTopButton = $('.back-to-top');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        servicesSection.addClass('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            observer.observe(servicesSection[0]);
+
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 300) {
+                    backToTopButton.addClass('show');
+                } else {
+                    backToTopButton.removeClass('show');
+                }
+            });
+
+            backToTopButton.click(function (e) {
+                e.preventDefault();
+                $('html, body').animate({ scrollTop: 0 }, '300');
+            });
+
+            $('#chatbot button').click(function () {
+                alert('Chatbot is under development!');
+            });
+
+            // Testimonials Carousel
+            $('.testimonial-carousel').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                adaptiveHeight: true
+            });
+
+            // Animated Statistics
+            $('.stat h3').each(function () {
+                var $this = $(this);
+                jQuery({ Counter: 0 }).animate({ Counter: $this.data('count') }, {
+                    duration: 2000,
+                    easing: 'swing',
+                    step: function () {
+                        $this.text(Math.ceil(this.Counter));
+                    }
+                });
+            });
+
+            // Scroll Indicator
+            $('.scroll-indicator').click(function () {
+                $('html, body').animate({
+                    scrollTop: $('#about').offset().top
+                }, 800);
+            });
+        });
+    </script>
+</body>
+
+</html>
