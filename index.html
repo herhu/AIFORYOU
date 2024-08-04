@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI For You</title>
+    <title>AI.FOR.YOU</title>
     <meta name="description" content="AI For You offers personalized GPTs, machine learning, and deep learning services to make AI accessible and beneficial for everyone.">
     <meta name="keywords" content="AI, GPT, machine learning, deep learning, personalized AI, AI services">
     <meta name="author" content="AI For You">
@@ -24,7 +24,7 @@
         }
 
         body.light-mode {
-            background-color: #f0f0f0;
+            background-color: #f9f9f9;
             color: #333;
         }
 
@@ -43,6 +43,11 @@
 
         .light-mode .navbar {
             background-color: rgba(255, 255, 255, 0.95);
+            color: #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .light-mode .navbar a {
             color: #333;
         }
 
@@ -72,7 +77,27 @@
         .content h1 {
             font-size: 3rem;
             margin-bottom: 0.5rem;
-            color: #8e24aa;
+            background: linear-gradient(90deg, #8e24aa, #00bfa5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textChange 12s infinite linear;
+        }
+
+        @keyframes textChange {
+            0%,
+            33% {
+                content: "AI.FOR.YOU";
+            }
+
+            34%,
+            66% {
+                content: "AI.FOR.ME";
+            }
+
+            67%,
+            100% {
+                content: "AI.FOR.ALL";
+            }
         }
 
         .content .slogan {
@@ -95,7 +120,7 @@
         }
 
         .light-mode .content .btn-primary {
-            color: #f0f0f0;
+            color: #f9f9f9;
         }
 
         .service,
@@ -244,9 +269,14 @@
             transform: scale(1.05);
         }
 
-        .light-mode .call-to-action .btn {
-            background-color: #f0f0f0;
+        .light-mode .call-to-action {
+            background-color: #e0f7fa;
             color: #00796b;
+        }
+
+        .light-mode .call-to-action .btn {
+            background-color: #00796b;
+            color: #e0f7fa;
         }
 
         .scroll-indicator {
@@ -282,27 +312,6 @@
             }
         }
 
-        .breadcrumbs {
-            padding: 1rem 0;
-            background-color: #1e1e1e;
-            color: #fff;
-            text-align: center;
-        }
-
-        .breadcrumbs a {
-            color: #00bfa5;
-            text-decoration: none;
-        }
-
-        .breadcrumbs a:hover {
-            text-decoration: underline;
-        }
-
-        .light-mode .breadcrumbs {
-            background-color: #f0f0f0;
-            color: #333;
-        }
-
         .lazy {
             opacity: 0;
             transition: opacity 1s ease-in-out;
@@ -310,6 +319,37 @@
 
         .lazy.loaded {
             opacity: 1;
+        }
+
+        .service,
+        .use-case,
+        .pricing-plan,
+        .faq-item {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+        }
+
+        .light-mode .service,
+        .light-mode .use-case,
+        .light-mode .pricing-plan,
+        .light-mode .faq-item {
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        .team-member {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .team-member:hover {
+            transform: scale(1.05);
+        }
+
+        .light-mode .team-member {
+            background-color: #ffffff;
+            color: #333333;
         }
 
         @media (min-width: 768px) {
@@ -348,12 +388,13 @@
 
     <!-- Navigation Bar -->
     <nav class="navbar p-4 flex justify-between items-center">
-        <a href="#" class="text-xl font-bold">AI For You</a>
+        <a href="#" class="text-xl font-bold">AI.FOR.YOU</a>
         <div class="hidden md:flex">
             <a href="#about" class="text-lg mx-4">About Us</a>
             <a href="#services" class="text-lg mx-4">Services</a>
             <a href="#use-cases" class="text-lg mx-4">Use Cases</a>
             <a href="#pricing" class="text-lg mx-4">Pricing</a>
+            <a href="#team" class="text-lg mx-4">Team</a>
             <a href="#contact" class="text-lg mx-4">Contact</a>
             <a href="#faq" class="text-lg mx-4">FAQ</a>
             <button id="dark-mode-toggle" class="text-lg mx-4">Light Mode</button>
@@ -369,23 +410,19 @@
         <a href="#services" class="block text-lg p-4">Services</a>
         <a href="#use-cases" class="block text-lg p-4">Use Cases</a>
         <a href="#pricing" class="block text-lg p-4">Pricing</a>
+        <a href="#team" class="block text-lg p-4">Team</a>
         <a href="#contact" class="block text-lg p-4">Contact</a>
         <a href="#faq" class="block text-lg p-4">FAQ</a>
         <button id="dark-mode-toggle-mobile" class="block text-lg p-4">Light Mode</button>
     </div>
 
-    <!-- Breadcrumbs -->
-    <div class="breadcrumbs">
-        <a href="#">Home</a> &gt; <span id="breadcrumb-current">Home</span>
-    </div>
-
     <!-- Full-screen Header -->
     <header class="hero min-h-screen flex items-center justify-center text-white relative">
         <video autoplay muted loop>
-            <source src="https://www.videvo.net/videvo_files/converted/2013_08/preview/Blue_Rays_Videvo.mp428342.webm" type="video/webm">
+            <source src="https://cdn.videvo.net/videvo_files/video/free/2013-09/small_watermarked/hd0223_preview.mp4" type="video/mp4">
         </video>
         <div class="content text-center z-10">
-            <h1 class="text-6xl font-bold">AI For YOU</h1>
+            <h1 class="text-6xl font-bold">AI.FOR.YOU</h1>
             <p class="slogan text-3xl mt-4">AGENCY</p>
             <a href="#services" class="btn-primary mt-6">Explore Services</a>
         </div>
@@ -406,17 +443,17 @@
 
             <!-- Services Section -->
             <section id="services" class="services grid grid-cols-1 md:grid-cols-3 gap-8 my-16">
-                <div class="service p-6 bg-gray-900 rounded-lg shadow-md tooltip">
+                <div class="service p-6 rounded-lg shadow-md tooltip">
                     <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-robot"></i> Personalized GPTs</h3>
                     <p>Create your own GPT tailored to your needs with ease.</p>
                     <span class="tooltiptext">Click to learn more</span>
                 </div>
-                <div class="service p-6 bg-gray-900 rounded-lg shadow-md tooltip">
+                <div class="service p-6 rounded-lg shadow-md tooltip">
                     <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-brain"></i> Machine Learning Services</h3>
                     <p>Leverage our expertise in machine learning to gain insights and predictions.</p>
                     <span class="tooltiptext">Click to learn more</span>
                 </div>
-                <div class="service p-6 bg-gray-900 rounded-lg shadow-md tooltip">
+                <div class="service p-6 rounded-lg shadow-md tooltip">
                     <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-project-diagram"></i> Deep Learning Models</h3>
                     <p>Utilize advanced deep learning models for more complex and accurate predictions.</p>
                     <span class="tooltiptext">Click to learn more</span>
@@ -426,15 +463,15 @@
             <!-- Use Cases Section -->
             <section id="use-cases" class="use-cases my-16 text-center">
                 <h2 class="text-4xl font-bold mb-6">Use Cases</h2>
-                <div class="use-case mb-6 p-6 bg-gray-900 rounded-lg shadow-md">
+                <div class="use-case mb-6 p-6 rounded-lg shadow-md">
                     <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-headset"></i> Customer Support Automation</h3>
                     <p>Deploy GPTs to automate customer support, providing instant and accurate responses to common queries.</p>
                 </div>
-                <div class="use-case mb-6 p-6 bg-gray-900 rounded-lg shadow-md">
+                <div class="use-case mb-6 p-6 rounded-lg shadow-md">
                     <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-chart-line"></i> Market Analysis</h3>
                     <p>Utilize machine learning models to analyze market trends and predict future movements.</p>
                 </div>
-                <div class="use-case mb-6 p-6 bg-gray-900 rounded-lg shadow-md">
+                <div class="use-case mb-6 p-6 rounded-lg shadow-md">
                     <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-recommend"></i> Personalized Recommendations</h3>
                     <p>Implement deep learning algorithms to offer personalized product or content recommendations to users.</p>
                 </div>
@@ -444,7 +481,7 @@
             <section id="pricing" class="pricing my-16 text-center">
                 <h2 class="text-4xl font-bold mb-6">Pricing</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="pricing-plan p-6 bg-gray-900 rounded-lg shadow-md">
+                    <div class="pricing-plan p-6 rounded-lg shadow-md">
                         <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-robot"></i> Basic</h3>
                         <p class="text-xl mb-4">$29/month</p>
                         <ul class="list-disc list-inside text-left mb-4">
@@ -454,7 +491,7 @@
                         </ul>
                         <a href="#" class="btn btn-primary">Sign Up</a>
                     </div>
-                    <div class="pricing-plan p-6 bg-gray-900 rounded-lg shadow-md">
+                    <div class="pricing-plan p-6 rounded-lg shadow-md">
                         <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-brain"></i> Pro</h3>
                         <p class="text-xl mb-4">$99/month</p>
                         <ul class="list-disc list-inside text-left mb-4">
@@ -464,7 +501,7 @@
                         </ul>
                         <a href="#" class="btn btn-primary">Sign Up</a>
                     </div>
-                    <div class="pricing-plan p-6 bg-gray-900 rounded-lg shadow-md">
+                    <div class="pricing-plan p-6 rounded-lg shadow-md">
                         <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-project-diagram"></i> Enterprise</h3>
                         <p class="text-xl mb-4">$299/month</p>
                         <ul class="list-disc list-inside text-left mb-4">
@@ -482,11 +519,11 @@
             <section class="testimonials my-16 text-center gradient-bg rounded-lg p-6">
                 <h2 class="text-4xl font-bold mb-6">Testimonials</h2>
                 <div class="testimonial-carousel">
-                    <div class="testimonial p-6 bg-gray-900 rounded-lg shadow-md">
+                    <div class="testimonial p-6 rounded-lg shadow-md">
                         <p class="text-lg mb-4">"AI For You has transformed our customer support system. The personalized GPTs are incredibly accurate and efficient!"</p>
                         <p class="font-bold text-teal-400">- Jane Doe, CEO of TechCorp</p>
                     </div>
-                    <div class="testimonial p-6 bg-gray-900 rounded-lg shadow-md">
+                    <div class="testimonial p-6 rounded-lg shadow-md">
                         <p class="text-lg mb-4">"The machine learning services provided by AI For You have given us valuable insights into market trends. Highly recommend!"</p>
                         <p class="font-bold text-teal-400">- John Smith, Marketing Director of MarketMinds</p>
                     </div>
@@ -509,18 +546,40 @@
                 </div>
             </section>
 
+            <!-- Team Section -->
+            <section id="team" class="team my-16 text-center">
+                <h2 class="text-4xl font-bold mb-6">Our Team</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="team-member p-6 rounded-lg shadow-md">
+                        <img src="https://via.placeholder.com/150" alt="Team Member" class="w-24 h-24 mx-auto rounded-full mb-4">
+                        <h3 class="text-2xl text-teal-400 mb-4">Hernan Humana</h3>
+                        <p class="text-lg">CEO</p>
+                    </div>
+                    <div class="team-member p-6 rounded-lg shadow-md">
+                        <img src="https://via.placeholder.com/150" alt="Team Member" class="w-24 h-24 mx-auto rounded-full mb-4">
+                        <h3 class="text-2xl text-teal-400 mb-4">Nicolas Salas</h3>
+                        <p class="text-lg">CTO</p>
+                    </div>
+                    <div class="team-member p-6 rounded-lg shadow-md">
+                        <img src="https://via.placeholder.com/150" alt="Team Member" class="w-24 h-24 mx-auto rounded-full mb-4">
+                        <h3 class="text-2xl text-teal-400 mb-4">Felix Espinoza</h3>
+                        <p class="text-lg">Lead Developer</p>
+                    </div>
+                </div>
+            </section>
+
             <!-- FAQ Section -->
             <section id="faq" class="faq my-16 text-center gradient-bg rounded-lg p-6">
                 <h2 class="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
-                <div class="faq-item p-6 bg-gray-900 rounded-lg shadow-md mb-4">
+                <div class="faq-item p-6 rounded-lg shadow-md mb-4">
                     <h3 class="text-2xl text-teal-400 mb-4">What is a personalized GPT?</h3>
                     <p>A personalized GPT is a custom-tailored AI model that can generate human-like text based on your specific requirements and data.</p>
                 </div>
-                <div class="faq-item p-6 bg-gray-900 rounded-lg shadow-md mb-4">
+                <div class="faq-item p-6 rounded-lg shadow-md mb-4">
                     <h3 class="text-2xl text-teal-400 mb-4">How can I get started with AI For You?</h3>
                     <p>You can get started by signing up for one of our plans or contacting us for a customized solution that fits your needs.</p>
                 </div>
-                <div class="faq-item p-6 bg-gray-900 rounded-lg shadow-md mb-4">
+                <div class="faq-item p-6 rounded-lg shadow-md mb-4">
                     <h3 class="text-2xl text-teal-400 mb-4">What support options are available?</h3>
                     <p>We offer email support for all plans, and priority support for Pro and Enterprise plans. Enterprise clients also get a dedicated account manager and 24/7 support.</p>
                 </div>
@@ -536,7 +595,7 @@
             <!-- Contact Form -->
             <section id="contact" class="contact my-16 text-center gradient-bg rounded-lg p-6">
                 <h2 class="text-4xl font-bold mb-6">Contact Us</h2>
-                <form class="max-w-xl mx-auto bg-gray-900 p-6 rounded-lg shadow-md" id="contact-form">
+                <form class="max-w-xl mx-auto p-6 rounded-lg shadow-md" id="contact-form">
                     <div class="mb-4">
                         <label for="name" class="block text-left text-gray-300">Name</label>
                         <input type="text" id="name" class="w-full p-2 border border-gray-600 rounded mt-2 bg-gray-800 text-white" required>
@@ -557,7 +616,7 @@
             <section class="newsletter my-16 text-center gradient-bg rounded-lg p-6">
                 <h2 class="text-4xl font-bold mb-6">Stay Updated</h2>
                 <p class="text-lg mb-6">Sign up for our newsletter to get the latest updates and news.</p>
-                <form class="max-w-lg mx-auto bg-gray-900 p-6 rounded-lg shadow-md" id="newsletter-form">
+                <form class="max-w-lg mx-auto p-6 rounded-lg shadow-md" id="newsletter-form">
                     <div class="mb-4">
                         <input type="email" id="newsletter-email" class="w-full p-2 border border-gray-600 rounded mt-2 bg-gray-800 text-white" placeholder="Your Email" required>
                     </div>
@@ -575,10 +634,14 @@
                 <a href="#" class="text-lg mx-2"><i class="fab fa-linkedin"></i></a>
                 <a href="#" class="text-lg mx-2"><i class="fab fa-instagram"></i></a>
             </div>
+            <div class="mt-4">
+                <a href="#" class="text-lg mx-2">Privacy Policy</a>
+                <a href="#" class="text-lg mx-2">Terms of Service</a>
+            </div>
         </footer>
     </div>
 
-    <!-- Back to Top Button -->
+        <!-- Back to Top Button -->
     <a href="#" class="back-to-top btn btn-primary fixed bottom-8 left-8 flex items-center justify-center">Top</a>
 
     <!-- Chatbot Widget -->
@@ -605,7 +668,6 @@
             const darkModeToggleMobile = $('#dark-mode-toggle-mobile');
             const menuToggle = $('#menu-toggle');
             const mobileMenu = $('#mobile-menu');
-            const breadcrumbCurrent = $('#breadcrumb-current');
 
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
@@ -662,18 +724,6 @@
             // Mobile Menu Toggle
             menuToggle.click(function () {
                 mobileMenu.toggleClass('hidden');
-            });
-
-            // Breadcrumbs Update
-            $(document).on('scroll', function () {
-                let scrollPos = $(document).scrollTop();
-                $('nav a').each(function () {
-                    let currLink = $(this);
-                    let refElement = $(currLink.attr("href"));
-                    if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-                        breadcrumbCurrent.text(currLink.text());
-                    }
-                });
             });
 
             // Testimonials Carousel
