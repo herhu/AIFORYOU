@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI For You</title>
+    <meta name="description" content="AI For You offers personalized GPTs, machine learning, and deep learning services to make AI accessible and beneficial for everyone.">
+    <meta name="keywords" content="AI, GPT, machine learning, deep learning, personalized AI, AI services">
+    <meta name="author" content="AI For You">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.15.0/dist/full.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -12,13 +15,34 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #121212;
-            color: #e0e0e0;
             scroll-behavior: smooth;
         }
 
-        .dark-mode {
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        body.light-mode {
             background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar a {
+            color: #e0e0e0;
+        }
+
+        .light-mode .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
             color: #333;
         }
 
@@ -68,6 +92,10 @@
         .content .btn-primary:hover {
             background-color: #00796b;
             transform: scale(1.05);
+        }
+
+        .light-mode .content .btn-primary {
+            color: #f0f0f0;
         }
 
         .service,
@@ -130,24 +158,6 @@
 
         .back-to-top.show {
             display: flex;
-        }
-
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background-color: rgba(18, 18, 18, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .navbar a {
-            color: #e0e0e0;
-        }
-
-        .dark-mode .navbar {
-            background-color: rgba(255, 255, 255, 0.95);
-            color: #333;
         }
 
         .loading-spinner {
@@ -234,6 +244,11 @@
             transform: scale(1.05);
         }
 
+        .light-mode .call-to-action .btn {
+            background-color: #f0f0f0;
+            color: #00796b;
+        }
+
         .scroll-indicator {
             position: absolute;
             bottom: 10px;
@@ -283,6 +298,20 @@
             text-decoration: underline;
         }
 
+        .light-mode .breadcrumbs {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .lazy {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .lazy.loaded {
+            opacity: 1;
+        }
+
         @media (min-width: 768px) {
             .content h1 {
                 font-size: 4rem;
@@ -311,7 +340,7 @@
     </style>
 </head>
 
-<body>
+<body class="dark-mode">
     <!-- Loading Spinner -->
     <div class="loading-spinner show">
         <div class="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-32 w-32"></div>
@@ -326,7 +355,8 @@
             <a href="#use-cases" class="text-lg mx-4">Use Cases</a>
             <a href="#pricing" class="text-lg mx-4">Pricing</a>
             <a href="#contact" class="text-lg mx-4">Contact</a>
-            <button id="dark-mode-toggle" class="text-lg mx-4">Dark Mode</button>
+            <a href="#faq" class="text-lg mx-4">FAQ</a>
+            <button id="dark-mode-toggle" class="text-lg mx-4">Light Mode</button>
         </div>
         <div class="md:hidden">
             <button id="menu-toggle" class="text-lg"><i class="fas fa-bars"></i></button>
@@ -340,7 +370,8 @@
         <a href="#use-cases" class="block text-lg p-4">Use Cases</a>
         <a href="#pricing" class="block text-lg p-4">Pricing</a>
         <a href="#contact" class="block text-lg p-4">Contact</a>
-        <button id="dark-mode-toggle-mobile" class="block text-lg p-4">Dark Mode</button>
+        <a href="#faq" class="block text-lg p-4">FAQ</a>
+        <button id="dark-mode-toggle-mobile" class="block text-lg p-4">Light Mode</button>
     </div>
 
     <!-- Breadcrumbs -->
@@ -478,6 +509,23 @@
                 </div>
             </section>
 
+            <!-- FAQ Section -->
+            <section id="faq" class="faq my-16 text-center gradient-bg rounded-lg p-6">
+                <h2 class="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
+                <div class="faq-item p-6 bg-gray-900 rounded-lg shadow-md mb-4">
+                    <h3 class="text-2xl text-teal-400 mb-4">What is a personalized GPT?</h3>
+                    <p>A personalized GPT is a custom-tailored AI model that can generate human-like text based on your specific requirements and data.</p>
+                </div>
+                <div class="faq-item p-6 bg-gray-900 rounded-lg shadow-md mb-4">
+                    <h3 class="text-2xl text-teal-400 mb-4">How can I get started with AI For You?</h3>
+                    <p>You can get started by signing up for one of our plans or contacting us for a customized solution that fits your needs.</p>
+                </div>
+                <div class="faq-item p-6 bg-gray-900 rounded-lg shadow-md mb-4">
+                    <h3 class="text-2xl text-teal-400 mb-4">What support options are available?</h3>
+                    <p>We offer email support for all plans, and priority support for Pro and Enterprise plans. Enterprise clients also get a dedicated account manager and 24/7 support.</p>
+                </div>
+            </section>
+
             <!-- Call to Action Section -->
             <section class="call-to-action">
                 <h2>Ready to Elevate Your Business?</h2>
@@ -488,7 +536,7 @@
             <!-- Contact Form -->
             <section id="contact" class="contact my-16 text-center gradient-bg rounded-lg p-6">
                 <h2 class="text-4xl font-bold mb-6">Contact Us</h2>
-                <form class="max-w-xl mx-auto bg-gray-900 p-6 rounded-lg shadow-md">
+                <form class="max-w-xl mx-auto bg-gray-900 p-6 rounded-lg shadow-md" id="contact-form">
                     <div class="mb-4">
                         <label for="name" class="block text-left text-gray-300">Name</label>
                         <input type="text" id="name" class="w-full p-2 border border-gray-600 rounded mt-2 bg-gray-800 text-white" required>
@@ -509,7 +557,7 @@
             <section class="newsletter my-16 text-center gradient-bg rounded-lg p-6">
                 <h2 class="text-4xl font-bold mb-6">Stay Updated</h2>
                 <p class="text-lg mb-6">Sign up for our newsletter to get the latest updates and news.</p>
-                <form class="max-w-lg mx-auto bg-gray-900 p-6 rounded-lg shadow-md">
+                <form class="max-w-lg mx-auto bg-gray-900 p-6 rounded-lg shadow-md" id="newsletter-form">
                     <div class="mb-4">
                         <input type="email" id="newsletter-email" class="w-full p-2 border border-gray-600 rounded mt-2 bg-gray-800 text-white" placeholder="Your Email" required>
                     </div>
@@ -543,6 +591,9 @@
     <!-- JavaScript for Enhancements -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazyload/2.0.0-beta.1/lazyload.min.js"></script>
     <script>
         $(document).ready(function () {
             // Hide loading spinner
@@ -587,11 +638,25 @@
 
             // Dark Mode Toggle
             darkModeToggle.click(function () {
-                $('body').toggleClass('dark-mode');
+                $('body').toggleClass('dark-mode light-mode');
+                if ($('body').hasClass('dark-mode')) {
+                    $('#dark-mode-toggle').text('Light Mode');
+                    $('#dark-mode-toggle-mobile').text('Light Mode');
+                } else {
+                    $('#dark-mode-toggle').text('Dark Mode');
+                    $('#dark-mode-toggle-mobile').text('Dark Mode');
+                }
             });
 
             darkModeToggleMobile.click(function () {
-                $('body').toggleClass('dark-mode');
+                $('body').toggleClass('dark-mode light-mode');
+                if ($('body').hasClass('dark-mode')) {
+                    $('#dark-mode-toggle').text('Light Mode');
+                    $('#dark-mode-toggle-mobile').text('Light Mode');
+                } else {
+                    $('#dark-mode-toggle').text('Dark Mode');
+                    $('#dark-mode-toggle-mobile').text('Dark Mode');
+                }
             });
 
             // Mobile Menu Toggle
@@ -640,6 +705,13 @@
                     scrollTop: $('#about').offset().top
                 }, 800);
             });
+
+            // Lazy Loading
+            $('.lazy').lazyload();
+
+            // Form Validation
+            $('#contact-form').validate();
+            $('#newsletter-form').validate();
         });
     </script>
 </body>
