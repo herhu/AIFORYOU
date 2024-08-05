@@ -464,7 +464,7 @@
 
     <!-- Navigation Bar -->
     <nav class="navbar p-4 flex justify-between items-center">
-        <a href="#" class="text-xl font-bold">AI.FOR.YOU</a>
+        <a href="#" class="text-xl font-bold">KÜTRAL</a>
         <div class="hidden md:flex">
             <a href="#about" class="text-lg mx-4">About Us</a>
             <a href="#services" class="text-lg mx-4">Services</a>
@@ -494,12 +494,9 @@
 
     <!-- Full-screen Header -->
     <header class="hero min-h-screen flex items-center justify-center text-white relative">
-        <video autoplay muted loop>
-            <source src="https://cdn.videvo.net/videvo_files/video/free/2013-09/small_watermarked/hd0223_preview.mp4" type="video/mp4">
-        </video>
         <div class="content text-center z-10">
-            <h1 class="text-6xl font-bold">
-                <span class="animated-text">AI.FOR.YOU</span>
+             <h1 class="text-6xl font-bold">
+                AI.FOR<span class="animated-text"> YOU</span>
             </h1>
             <p class="slogan text-3xl mt-4">AGENCY</p>
             <a href="#services" class="btn-primary mt-6">Explore Services</a>
@@ -579,7 +576,7 @@
                     </div>
                     <div class="pricing-plan p-6 rounded-lg shadow-md">
                         <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-brain"></i> Pro</h3>
-                        <p class="text-xl mb-4">$99/month</p>
+                        <p class="text-xl mb-4">$69/month</p>
                         <ul class="list-disc list-inside text-left mb-4">
                             <li>Machine Learning Services</li>
                             <li>100,000 API calls</li>
@@ -589,7 +586,7 @@
                     </div>
                     <div class="pricing-plan p-6 rounded-lg shadow-md">
                         <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-project-diagram"></i> Enterprise</h3>
-                        <p class="text-xl mb-4">$299/month</p>
+                        <p class="text-xl mb-4">$149/month</p>
                         <ul class="list-disc list-inside text-left mb-4">
                             <li>Deep Learning Models</li>
                             <li>Unlimited API calls</li>
@@ -745,6 +742,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazyload/2.0.0-beta.1/lazyload.min.js"></script>
     <script>
         $(document).ready(function () {
+           
+            // Text Change Animation
+            const animatedText = document.querySelector('.animated-text');
+            const words = [" YOU", " NOW"];
+            let wordIndex = 0;
+
+            setInterval(() => {
+                animatedText.style.opacity = '0';
+                setTimeout(() => {
+                    animatedText.textContent = words[wordIndex];
+                    animatedText.style.opacity = '1';
+                    wordIndex = (wordIndex + 1) % words.length;
+                }, 500);
+            }, 2000);
+  
+       
             // Hide loading spinner
             $('.loading-spinner').removeClass('show');
 
@@ -856,21 +869,10 @@
 
                 $('.content').css('transform', `rotateX(${y}deg) rotateY(${x}deg)`);
             });
+           
+      });
 
-            // Text Change Animation
-            const animatedText = document.querySelector('.animated-text');
-            const words = ["AI.FOR.YOU", "AI.FOR.ME", "AI.FOR.ALL"];
-            let wordIndex = 0;
-
-            setInterval(() => {
-                animatedText.style.opacity = '0';
-                setTimeout(() => {
-                    animatedText.textContent = words[wordIndex];
-                    animatedText.style.opacity = '1';
-                    wordIndex = (wordIndex + 1) % words.length;
-                }, 500);
-            }, 2000);
-        });
+  
     </script>
 </body>
 
