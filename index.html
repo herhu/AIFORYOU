@@ -81,7 +81,7 @@
             background: linear-gradient(90deg, #8e24aa, #00bfa5);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: textChange 12s infinite linear, float 3s ease-in-out infinite;
+            animation: textChange 6s infinite linear, float 3s ease-in-out infinite;
         }
 
         @keyframes textChange {
@@ -498,7 +498,9 @@
             <source src="https://cdn.videvo.net/videvo_files/video/free/2013-09/small_watermarked/hd0223_preview.mp4" type="video/mp4">
         </video>
         <div class="content text-center z-10">
-            <h1 class="text-6xl font-bold">AI.FOR.YOU</h1>
+            <h1 class="text-6xl font-bold">
+                <span class="animated-text">AI.FOR.YOU</span>
+            </h1>
             <p class="slogan text-3xl mt-4">AGENCY</p>
             <a href="#services" class="btn-primary mt-6">Explore Services</a>
         </div>
@@ -854,6 +856,20 @@
 
                 $('.content').css('transform', `rotateX(${y}deg) rotateY(${x}deg)`);
             });
+
+            // Text Change Animation
+            const animatedText = document.querySelector('.animated-text');
+            const words = ["AI.FOR.YOU", "AI.FOR.ME", "AI.FOR.ALL"];
+            let wordIndex = 0;
+
+            setInterval(() => {
+                animatedText.style.opacity = '0';
+                setTimeout(() => {
+                    animatedText.textContent = words[wordIndex];
+                    animatedText.style.opacity = '1';
+                    wordIndex = (wordIndex + 1) % words.length;
+                }, 500);
+            }, 2000);
         });
     </script>
 </body>
