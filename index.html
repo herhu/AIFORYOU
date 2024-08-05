@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI.FOR.YOU</title>
-    <meta name="description" content="AI For You offers personalized GPTs, machine learning, and deep learning services to make AI accessible and beneficial for everyone.">
-    <meta name="keywords" content="AI, GPT, machine learning, deep learning, personalized AI, AI services">
-    <meta name="author" content="AI For You">
+    <title>KÜTRAL</title>
+    <meta name="description" content="KÜTRAL, AI For You offers personalized GPTs, machine learning, and deep learning services to make AI accessible and beneficial for everyone.">
+    <meta name="keywords" content="KÜTRAL, AI, GPT, machine learning, deep learning, personalized AI, AI services">
+    <meta name="author" content="AI For You, KÜTRAL">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.15.0/dist/full.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -137,13 +137,15 @@
 
         .service,
         .use-case,
-        .pricing-plan {
+        .pricing-plan,
+        .special-offer {
             transition: transform 0.3s ease-in-out;
         }
 
         .service:hover,
         .use-case:hover,
-        .pricing-plan:hover {
+        .pricing-plan:hover,
+        .special-offer:hover {
             transform: scale(1.05);
         }
 
@@ -319,7 +321,7 @@
                 transform: translateY(-10px);
             }
 
-            60% {
+             60% {
                 transform: translateY(-5px);
             }
         }
@@ -598,6 +600,28 @@
                 </div>
             </section>
 
+            <!-- Special Offers Section -->
+            <section id="special-offers" class="special-offers my-16 text-center">
+                <h2 class="text-4xl font-bold mb-6">Special Offers</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="special-offer p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-building"></i> PYMEs</h3>
+                        <p class="text-lg mb-4">Tailored solutions for small and medium-sized businesses. Contact us for a consultation.</p>
+                        <a href="#contact" class="btn btn-primary">Contact Us</a>
+                    </div>
+                    <div class="special-offer p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-user-graduate"></i> Students</h3>
+                        <p class="text-lg mb-4">Special rates for students looking to explore AI and machine learning. Contact us for details.</p>
+                        <a href="#contact" class="btn btn-primary">Contact Us</a>
+                    </div>
+                    <div class="special-offer p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-flask"></i> Experimental</h3>
+                        <p class="text-lg mb-4">Innovative solutions for experimental projects and research. Reach out to discuss your needs.</p>
+                        <a href="#contact" class="btn btn-primary">Contact Us</a>
+                    </div>
+                </div>
+            </section>
+
             <!-- Testimonials Section -->
             <section class="testimonials my-16 text-center gradient-bg rounded-lg p-6">
                 <h2 class="text-4xl font-bold mb-6">Testimonials</h2>
@@ -742,7 +766,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazyload/2.0.0-beta.1/lazyload.min.js"></script>
     <script>
         $(document).ready(function () {
-           
+
             // Text Change Animation
             const animatedText = document.querySelector('.animated-text');
             const words = [" YOU", " NOW"];
@@ -756,8 +780,7 @@
                     wordIndex = (wordIndex + 1) % words.length;
                 }, 500);
             }, 2000);
-  
-       
+
             // Hide loading spinner
             $('.loading-spinner').removeClass('show');
 
@@ -869,10 +892,8 @@
 
                 $('.content').css('transform', `rotateX(${y}deg) rotateY(${x}deg)`);
             });
-           
-      });
 
-  
+        });
     </script>
 </body>
 
