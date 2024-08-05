@@ -55,6 +55,7 @@
             position: relative;
             height: 100vh;
             overflow: hidden;
+            perspective: 1000px;
         }
 
         .hero video {
@@ -80,7 +81,7 @@
             background: linear-gradient(90deg, #8e24aa, #00bfa5);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: textChange 12s infinite linear;
+            animation: textChange 12s infinite linear, float 3s ease-in-out infinite;
         }
 
         @keyframes textChange {
@@ -97,6 +98,17 @@
             67%,
             100% {
                 content: "AI.FOR.ALL";
+            }
+        }
+
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
             }
         }
 
@@ -377,6 +389,70 @@
                 font-size: 1.25rem;
             }
         }
+
+        /* 3D Cube Animation */
+        .cube-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            transform: rotateX(-30deg) rotateY(30deg);
+            animation: rotateCube 10s infinite linear;
+        }
+
+        .cube {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(142, 36, 170, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cube.front {
+            transform: translateZ(100px);
+        }
+
+        .cube.back {
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        .cube.left {
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+
+        .cube.right {
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .cube.top {
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .cube.bottom {
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+        @keyframes rotateCube {
+            from {
+                transform: rotateX(-30deg) rotateY(0deg);
+            }
+
+            to {
+                transform: rotateX(-30deg) rotateY(360deg);
+            }
+        }
+
+        /* Mouse Move Effect */
+        body {
+            perspective: 1000px;
+        }
+
+        .content {
+            transform: rotateX(0deg) rotateY(0deg);
+            transition: transform 0.1s ease-out;
+        }
     </style>
 </head>
 
@@ -425,6 +501,14 @@
             <h1 class="text-6xl font-bold">AI.FOR.YOU</h1>
             <p class="slogan text-3xl mt-4">AGENCY</p>
             <a href="#services" class="btn-primary mt-6">Explore Services</a>
+        </div>
+        <div class="cube-container">
+            <div class="cube front"></div>
+            <div class="cube back"></div>
+            <div class="cube left"></div>
+            <div class="cube right"></div>
+            <div class="cube top"></div>
+            <div class="cube bottom"></div>
         </div>
         <div class="scroll-indicator">
             <i class="fas fa-angle-down"></i>
@@ -641,7 +725,7 @@
         </footer>
     </div>
 
-        <!-- Back to Top Button -->
+    <!-- Back to Top Button -->
     <a href="#" class="back-to-top btn btn-primary fixed bottom-8 left-8 flex items-center justify-center">Top</a>
 
     <!-- Chatbot Widget -->
@@ -762,6 +846,14 @@
             // Form Validation
             $('#contact-form').validate();
             $('#newsletter-form').validate();
+
+            // Mouse Move Effect
+            document.addEventListener('mousemove', (e) => {
+                const x = (window.innerWidth / 2 - e.clientX) / 50;
+                const y = (window.innerHeight / 2 - e.clientY) / 50;
+
+                $('.content').css('transform', `rotateX(${y}deg) rotateY(${x}deg)`);
+            });
         });
     </script>
 </body>
