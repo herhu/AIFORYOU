@@ -148,18 +148,6 @@
             animation: fadeInUp 1.5s ease-in-out;
         }
 
-        .service-section img {
-            flex: 1 1 100%;
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-
-        .service-section img:hover {
-            transform: scale(1.05);
-        }
-
         .service-section div {
             flex: 1 1 100%;
             transition: transform 0.3s;
@@ -497,146 +485,162 @@
         </div>
     </header>
 
-    <!-- Main Content Section -->
-    <section class="content">
-        <h2>Our Expertise</h2>
-        <p>At KÜTRAL, we leverage the power of artificial intelligence to provide cutting-edge solutions tailored to your needs. Our services include personalized GPTs, machine learning insights, and advanced deep learning models.</p>
+    <!-- Main Container -->
+    <div class="container mx-auto p-6">
+        <main>
+            <!-- Introduction Section -->
+            <section id="about" class="intro my-16 text-center gradient-bg rounded-lg p-6">
+                <h2 class="text-4xl font-bold mb-6">Our Expertise</h2>
+                <p class="text-lg mb-6">At KÜTRAL, we leverage the power of artificial intelligence to provide cutting-edge solutions tailored to your needs. Our services include personalized GPTs, machine learning insights, and advanced deep learning models.</p>
+            </section>
 
-        <div class="service-section">
-            <div>
-                <h3>What is Machine Learning (ML)?</h3>
-                <p>Machine Learning (ML) is a subset of artificial intelligence (AI) that focuses on the development of algorithms that enable computers to learn from and make decisions based on data. These algorithms can identify patterns, predict future outcomes, and improve their performance over time with minimal human intervention.</p>
-                <p>Common algorithms used in ML include:</p>
-                <ul>
-                    <li><strong>Linear Regression:</strong> Used for predicting a continuous target variable based on one or more predictor variables.</li>
-                    <li><strong>Decision Trees:</strong> A non-parametric supervised learning method used for classification and regression.</li>
-                    <li><strong>Support Vector Machines (SVM):</strong> Used for classification and regression tasks by finding the hyperplane that best divides a dataset into classes.</li>
-                    <li><strong>Random Forest:</strong> An ensemble method that uses multiple decision trees to improve predictive performance.</li>
-                </ul>
-                <div class="example-box">
-                    <h4>Example:</h4>
-                    <p>In a retail business, a machine learning model can analyze past sales data to predict future sales trends, helping to optimize inventory management and marketing strategies.</p>
+            <!-- Services Section -->
+            <section id="services" class="my-16 text-center">
+                <h2 class="text-4xl font-bold mb-6">Our Services</h2>
+
+                <!-- Personalized GPTs -->
+                <div class="service-section flex flex-col items-center my-16">
+                    <div class="md:w-3/4 p-4">
+                        <h3 class="text-3xl font-bold mb-4">Personalized GPTs</h3>
+                        <p class="mb-4">Create your own GPT tailored to your needs with ease. Our personalized GPTs are designed to understand and generate human-like text based on your specific requirements.</p>
+                        <div class="example-box">
+                            <h4 class="text-xl font-bold mb-2">Example:</h4>
+                            <p>Imagine you are a family lawyer like Mario López in Chile. We can create a GPT that not only understands Chilean family law but also integrates your unique style and past case successes to provide highly accurate and personalized legal assistance to your clients.</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="service-section">
-            <div>
-                <h3>What is Deep Learning (DL)?</h3>
-                <p>Deep Learning (DL) is a subset of ML that involves neural networks with many layers (hence the term "deep"). These networks can learn to represent data through multiple levels of abstraction, making them particularly powerful for tasks such as image and speech recognition, natural language processing, and more.</p>
-                <p>Key components of DL include:</p>
-                <ul>
-                    <li><strong>Neural Networks:</strong> Computational models inspired by the human brain, consisting of layers of nodes (neurons) that process data.</li>
-                    <li><strong>Convolutional Neural Networks (CNNs):</strong> Specialized neural networks for processing grid-like data, such as images.</li>
-                    <li><strong>Recurrent Neural Networks (RNNs):</strong> Neural networks designed for sequential data, such as time series or text.</li>
-                    <li><strong>Generative Adversarial Networks (GANs):</strong> A class of neural networks used for generating new data samples similar to a given dataset.</li>
-                </ul>
-                <div class="example-box">
-                    <h4>Example:</h4>
-                    <p>In healthcare, a deep learning model can analyze medical images to detect diseases such as cancer with high accuracy, aiding doctors in early diagnosis and treatment planning.</p>
+                <!-- Machine Learning Services -->
+                <div class="service-section flex flex-col items-center my-16">
+                    <div class="md:w-3/4 p-4">
+                        <h3 class="text-3xl font-bold mb-4">Machine Learning Services</h3>
+                        <p class="mb-4">Machine Learning (ML) is a subset of artificial intelligence (AI) that focuses on the development of algorithms that enable computers to learn from and make decisions based on data. These algorithms can identify patterns, predict future outcomes, and improve their performance over time with minimal human intervention.</p>
+                        <p class="mb-4">Common algorithms used in ML include:</p>
+                        <ul class="list-disc list-inside mb-4">
+                            <li><strong>Linear Regression:</strong> Used for predicting a continuous target variable based on one or more predictor variables.</li>
+                            <li><strong>Decision Trees:</strong> A non-parametric supervised learning method used for classification and regression.</li>
+                            <li><strong>Support Vector Machines (SVM):</strong> Used for classification and regression tasks by finding the hyperplane that best divides a dataset into classes.</li>
+                            <li><strong>Random Forest:</strong> An ensemble method that uses multiple decision trees to improve predictive performance.</li>
+                        </ul>
+                        <div class="example-box">
+                            <h4 class="text-xl font-bold mb-2">Example:</h4>
+                            <p>In a retail business, a machine learning model can analyze past sales data to predict future sales trends, helping to optimize inventory management and marketing strategies.</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="service-section">
-            <div>
-                <h3>Personalized GPTs</h3>
-                <p>Create your own GPT tailored to your needs with ease. Our personalized GPTs are designed to understand and generate human-like text based on your specific requirements.</p>
-                <div class="example-box">
-                    <h4>Example:</h4>
-                    <p>Imagine you are a family lawyer like Mario López in Chile. We can create a GPT that not only understands Chilean family law but also integrates your unique style and past case successes to provide highly accurate and personalized legal assistance to your clients.</p>
+                <!-- Deep Learning Models -->
+                <div class="service-section flex flex-col items-center my-16">
+                    <div class="md:w-3/4 p-4">
+                        <h3 class="text-3xl font-bold mb-4">Deep Learning Models</h3>
+                        <p class="mb-4">Deep Learning (DL) is a subset of ML that involves neural networks with many layers (hence the term "deep"). These networks can learn to represent data through multiple levels of abstraction, making them particularly powerful for tasks such as image and speech recognition, natural language processing, and more.</p>
+                        <p class="mb-4">Key components of DL include:</p>
+                        <ul class="list-disc list-inside mb-4">
+                            <li><strong>Neural Networks:</strong> Computational models inspired by the human brain, consisting of layers of nodes (neurons) that process data.</li>
+                            <li><strong>Convolutional Neural Networks (CNNs):</strong> Specialized neural networks for processing grid-like data, such as images.</li>
+                            <li><strong>Recurrent Neural Networks (RNNs):</strong> Neural networks designed for sequential data, such as time series or text.</li>
+                            <li><strong>Generative Adversarial Networks (GANs):</strong> A class of neural networks used for generating new data samples similar to a given dataset.</li>
+                        </ul>
+                        <div class="example-box">
+                            <h4 class="text-xl font-bold mb-2">Example:</h4>
+                            <p>In healthcare, a deep learning model can analyze medical images to detect diseases such as cancer with high accuracy, aiding doctors in early diagnosis and treatment planning.</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </section>
 
-        <h2>Building Models: The Process</h2>
-        <div class="steps-container">
-            <div class="step-box">
-                <h3>Data Collection <i class="fas fa-database"></i></h3>
-                <p>Gathering relevant data from various sources. This data must be clean, accurate, and representative of the problem we aim to solve.</p>
-            </div>
-            <div class="step-box">
-                <h3>Data Preprocessing <i class="fas fa-cogs"></i></h3>
-                <p>Cleaning and transforming the data into a format suitable for model training. This step includes handling missing values, normalizing data, and feature engineering.</p>
-            </div>
-            <div class="step-box">
-                <h3>Model Selection <i class="fas fa-check-circle"></i></h3>
-                <p>Choosing the appropriate machine learning or deep learning algorithm based on the problem and the data. Common algorithms include decision trees, neural networks, and support vector machines.</p>
-            </div>
-            <div class="step-box">
-                <h3>Model Training <i class="fas fa-dumbbell"></i></h3>
-                <p>Training the model on the preprocessed data. This involves feeding the data into the model and adjusting the model parameters to minimize prediction error.</p>
-            </div>
-            <div class="step-box">
-                <h3>Model Evaluation <i class="fas fa-chart-line"></i></h3>
-                <p>Assessing the model's performance using various metrics such as accuracy, precision, recall, and F1 score. This step ensures that the model generalizes well to new, unseen data.</p>
-            </div>
-            <div class="step-box">
-                <h3>Model Deployment <i class="fas fa-rocket"></i></h3>
-                <p>Deploying the trained model into a production environment where it can start making predictions on new data.</p>
-            </div>
-            <div class="step-box">
-                <h3>Model Monitoring <i class="fas fa-eye"></i></h3>
-                <p>Continuously monitoring the model's performance and updating it as necessary to maintain accuracy and relevance.</p>
-            </div>
-        </div>
+            <!-- Building Models: The Process -->
+            <section id="process" class="process my-16 text-center">
+                <h2 class="text-4xl font-bold mb-6">Building Models: The Process</h2>
+                <div class="steps-container">
+                    <div class="step-box">
+                        <h3>Data Collection <i class="fas fa-database"></i></h3>
+                        <p>Gathering relevant data from various sources. This data must be clean, accurate, and representative of the problem we aim to solve.</p>
+                    </div>
+                    <div class="step-box">
+                        <h3>Data Preprocessing <i class="fas fa-cogs"></i></h3>
+                        <p>Cleaning and transforming the data into a format suitable for model training. This step includes handling missing values, normalizing data, and feature engineering.</p>
+                    </div>
+                    <div class="step-box">
+                        <h3>Model Selection <i class="fas fa-check-circle"></i></h3>
+                        <p>Choosing the appropriate machine learning or deep learning algorithm based on the problem and the data. Common algorithms include decision trees, neural networks, and support vector machines.</p>
+                    </div>
+                    <div class="step-box">
+                        <h3>Model Training <i class="fas fa-dumbbell"></i></h3>
+                        <p>Training the model on the preprocessed data. This involves feeding the data into the model and adjusting the model parameters to minimize prediction error.</p>
+                    </div>
+                    <div class="step-box">
+                        <h3>Model Evaluation <i class="fas fa-chart-line"></i></h3>
+                        <p>Assessing the model's performance using various metrics such as accuracy, precision, recall, and F1 score. This step ensures that the model generalizes well to new, unseen data.</p>
+                    </div>
+                    <div class="step-box">
+                        <h3>Model Deployment <i class="fas fa-rocket"></i></h3>
+                        <p>Deploying the trained model into a production environment where it can start making predictions on new data.</p>
+                    </div>
+                    <div class="step-box">
+                        <h3>Model Monitoring <i class="fas fa-eye"></i></h3>
+                        <p>Continuously monitoring the model's performance and updating it as necessary to maintain accuracy and relevance.</p>
+                    </div>
+                </div>
+            </section>
 
-        <h2>Advanced Techniques and Tools</h2>
-        <div class="techniques-container">
-            <table class="techniques-table">
-                <thead>
-                    <tr>
-                        <th>Technique</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Natural Language Processing (NLP) <i class="fas fa-language"></i></td>
-                        <td>Techniques for understanding and generating human language, crucial for developing GPTs and other language-based models.</td>
-                    </tr>
-                    <tr>
-                        <td>Neural Networks <i class="fas fa-brain"></i></td>
-                        <td>A type of machine learning model inspired by the human brain, particularly useful for image and speech recognition tasks.</td>
-                    </tr>
-                    <tr>
-                        <td>Convolutional Neural Networks (CNNs) <i class="fas fa-images"></i></td>
-                        <td>Specialized neural networks for processing grid-like data, such as images.</td>
-                    </tr>
-                    <tr>
-                        <td>Recurrent Neural Networks (RNNs) <i class="fas fa-stream"></i></td>
-                        <td>Neural networks designed for sequential data, such as time series or text.</td>
-                    </tr>
-                    <tr>
-                        <td>Transfer Learning <i class="fas fa-sync-alt"></i></td>
-                        <td>Leveraging pre-trained models to solve new problems, significantly reducing the time and resources needed for training.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+            <!-- Advanced Techniques and Tools -->
+            <section id="techniques" class="techniques my-16 text-center">
+                <h2 class="text-4xl font-bold mb-6">Advanced Techniques and Tools</h2>
+                <div class="techniques-container">
+                    <table class="techniques-table">
+                        <thead>
+                            <tr>
+                                <th>Technique</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Natural Language Processing (NLP) <i class="fas fa-language"></i></td>
+                                <td>Techniques for understanding and generating human language, crucial for developing GPTs and other language-based models.</td>
+                            </tr>
+                            <tr>
+                                <td>Neural Networks <i class="fas fa-brain"></i></td>
+                                <td>A type of machine learning model inspired by the human brain, particularly useful for image and speech recognition tasks.</td>
+                            </tr>
+                            <tr>
+                                <td>Convolutional Neural Networks (CNNs) <i class="fas fa-images"></i></td>
+                                <td>Specialized neural networks for processing grid-like data, such as images.</td>
+                            </tr>
+                            <tr>
+                                <td>Recurrent Neural Networks (RNNs) <i class="fas fa-stream"></i></td>
+                                <td>Neural networks designed for sequential data, such as time series or text.</td>
+                            </tr>
+                            <tr>
+                                <td>Transfer Learning <i class="fas fa-sync-alt"></i></td>
+                                <td>Leveraging pre-trained models to solve new problems, significantly reducing the time and resources needed for training.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="example-box">
+                    <h4 class="text-xl font-bold mb-2">Example:</h4>
+                    <p>Consider a project where we use transfer learning to develop a model for detecting defects in manufacturing products. By using a pre-trained model on similar tasks and fine-tuning it with specific data from the client's manufacturing process, we can quickly and effectively develop a high-performing model.</p>
+                </div>
+            </section>
+        </main>
 
-        <div class="example-box">
-            <h4>Example:</h4>
-            <p>Consider a project where we use transfer learning to develop a model for detecting defects in manufacturing products. By using a pre-trained model on similar tasks and fine-tuning it with specific data from the client's manufacturing process, we can quickly and effectively develop a high-performing model.</p>
-        </div>
-
-        <p>Our approach combines the latest research and techniques with practical applications, ensuring that our clients receive state-of-the-art solutions tailored to their specific needs. For more information, check out references like "Deep Learning" by Ian Goodfellow and "Pattern Recognition and Machine Learning" by Christopher Bishop.</p>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 AI For You. All rights reserved.</p>
-        <div class="social-icons mt-4">
-            <a href="#" class="text-lg mx-2"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="text-lg mx-2"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="text-lg mx-2"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="text-lg mx-2"><i class="fab fa-instagram"></i></a>
-        </div>
-        <div class="mt-4">
-            <a href="#" class="text-lg mx-2">Privacy Policy</a>
-            <a href="#" class="text-lg mx-2">Terms of Service</a>
-        </div>
-    </footer>
+        <!-- Footer -->
+        <footer class="py-6 text-center bg-gray-900 text-gray-400">
+            <p>&copy; 2024 AI For You. All rights reserved.</p>
+            <div class="social-icons mt-4">
+                <a href="#" class="text-lg mx-2"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-lg mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-lg mx-2"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-lg mx-2"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="mt-4">
+                <a href="#" class="text-lg mx-2">Privacy Policy</a>
+                <a href="#" class="text-lg mx-2">Terms of Service</a>
+            </div>
+        </footer>
+    </div>
 
     <!-- JavaScript for Enhancements -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
