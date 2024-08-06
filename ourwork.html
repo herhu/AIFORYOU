@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work - KÜTRAL</title>
+    <meta name="description" content="Discover the advanced AI and machine learning services offered by KÜTRAL. Learn how we build personalized GPTs, utilize machine learning, and deploy deep learning models.">
+    <meta name="keywords" content="KÜTRAL, AI, machine learning, deep learning, GPT, personalized AI, AI services">
+    <meta name="author" content="AI For You, KÜTRAL">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.15.0/dist/full.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        body.light-mode {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar a {
+            color: #e0e0e0;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #00bfa5;
+        }
+
+        .light-mode .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            color: #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .light-mode .navbar a {
+            color: #333;
+        }
+
+        .header {
+            text-align: center;
+            padding: 100px 20px;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .header h1,
+        .header p,
+        .header .cta {
+            z-index: 2;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 2s ease-in-out;
+            background: linear-gradient(90deg, #8e24aa, #00bfa5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        .header .cta {
+            background-color: #00bfa5;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: background-color 0.3s;
+        }
+
+        .header .cta:hover {
+            background-color: #008f75;
+        }
+
+        .content {
+            padding: 50px 20px;
+        }
+
+        .content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .content h2::after {
+            content: '';
+            width: 50px;
+            height: 5px;
+            background-color: #00bfa5;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .content p {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .service-section {
+            margin-bottom: 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .service-section img {
+            flex: 1 1 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .service-section img:hover {
+            transform: scale(1.05);
+        }
+
+        .service-section div {
+            flex: 1 1 100%;
+            transition: transform 0.3s;
+        }
+
+        .service-section div:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-section h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #00bfa5;
+        }
+
+        .service-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .service-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .example-box {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            transition: background-color 0.3s;
+        }
+
+        .example-box:hover {
+            background-color: #2a2a2a;
+        }
+
+        .light-mode .example-box {
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        .light-mode .example-box:hover {
+            background-color: #f0f0f0;
+        }
+
+        .footer {
+            padding: 2rem;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .light-mode .footer {
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #00bfa5;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cube-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            transform: rotateX(-30deg) rotateY(30deg);
+            animation: rotateCube 10s infinite linear;
+        }
+
+        .cube {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(142, 36, 170, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cube.front {
+            transform: translateZ(100px);
+        }
+
+        .cube.back {
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        .cube.left {
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+
+        .cube.right {
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .cube.top {
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .cube.bottom {
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+        @keyframes rotateCube {
+            from {
+                transform: rotateX(-30deg) rotateY(0deg);
+            }
+
+            to {
+                transform: rotateX(-30deg) rotateY(360deg);
+            }
+        }
+
+        .steps-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .step-box {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
+            animation: fadeInUp 1.5s ease-in-out;
+            position: relative;
+        }
+
+        .step-box:hover {
+            background-color: #2a2a2a;
+            transform: translateY(-5px);
+        }
+
+        .step-box::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid #00bfa5;
+            transform: translateY(-50%);
+        }
+
+        .light-mode .step-box {
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        .light-mode .step-box:hover {
+            background-color: #f0f0f0;
+        }
+
+        .light-mode .step-box::before {
+            border-right: 10px solid #00bfa5;
+        }
+    </style>
+</head>
+
+<body class="dark-mode">
+    <!-- Navigation Bar -->
+    <nav class="navbar p-4 flex justify-between items-center">
+        <a href="index.html" class="text-xl font-bold">KÜTRAL</a>
+        <div class="hidden md:flex">
+            <a href="index.html#about" class="text-lg mx-4">About Us</a>
+            <a href="index.html#services" class="text-lg mx-4">Services</a>
+            <a href="index.html#use-cases" class="text-lg mx-4">Use Cases</a>
+            <a href="index.html#pricing" class="text-lg mx-4">Pricing</a>
+            <a href="index.html#team" class="text-lg mx-4">Team</a>
+            <a href="index.html#contact" class="text-lg mx-4">Contact</a>
+            <a href="index.html#faq" class="text-lg mx-4">FAQ</a>
+            <button id="dark-mode-toggle" class="text-lg mx-4">Light Mode</button>
+        </div>
+        <div class="md:hidden">
+            <button id="menu-toggle" class="text-lg"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden">
+        <a href="index.html#about" class="block text-lg p-4">About Us</a>
+        <a href="index.html#services" class="block text-lg p-4">Services</a>
+        <a href="index.html#use-cases" class="block text-lg p-4">Use Cases</a>
+        <a href="index.html#pricing" class="block text-lg p-4">Pricing</a>
+        <a href="index.html#team" class="block text-lg p-4">Team</a>
+        <a href="index.html#contact" class="block text-lg p-4">Contact</a>
+        <a href="index.html#faq" class="block text-lg p-4">FAQ</a>
+        <button id="dark-mode-toggle-mobile" class="block text-lg p-4">Light Mode</button>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header">
+        <h1>What We Do</h1>
+        <p>Explore our advanced AI and machine learning services</p>
+        <a href="#services" class="cta">Learn More</a>
+        <div class="cube-container">
+            <div class="cube front"></div>
+            <div class="cube back"></div>
+            <div class="cube left"></div>
+            <div class="cube right"></div>
+            <div class="cube top"></div>
+            <div class="cube bottom"></div>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <section class="content">
+        <h2>Our Expertise</h2>
+        <p>At KÜTRAL, we leverage the power of artificial intelligence to provide cutting-edge solutions tailored to your needs. Our services include personalized GPTs, machine learning insights, and advanced deep learning models.</p>
+
+        <div class="service-section">
+            <div>
+                <h3>What is Machine Learning (ML)?</h3>
+                <p>Machine Learning (ML) is a subset of artificial intelligence (AI) that focuses on the development of algorithms that enable computers to learn from and make decisions based on data. These algorithms can identify patterns, predict future outcomes, and improve their performance over time with minimal human intervention.</p>
+                <p>Common algorithms used in ML include:</p>
+                <ul>
+                    <li><strong>Linear Regression:</strong> Used for predicting a continuous target variable based on one or more predictor variables.</li>
+                    <li><strong>Decision Trees:</strong> A non-parametric supervised learning method used for classification and regression.</li>
+                    <li><strong>Support Vector Machines (SVM):</strong> Used for classification and regression tasks by finding the hyperplane that best divides a dataset into classes.</li>
+                    <li><strong>Random Forest:</strong> An ensemble method that uses multiple decision trees to improve predictive performance.</li>
+                </ul>
+                <div class="example-box">
+                    <h4>Example:</h4>
+                    <p>In a retail business, a machine learning model can analyze past sales data to predict future sales trends, helping to optimize inventory management and marketing strategies.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-section">
+            <div>
+                <h3>What is Deep Learning (DL)?</h3>
+                <p>Deep Learning (DL) is a subset of ML that involves neural networks with many layers (hence the term "deep"). These networks can learn to represent data through multiple levels of abstraction, making them particularly powerful for tasks such as image and speech recognition, natural language processing, and more.</p>
+                <p>Key components of DL include:</p>
+                <ul>
+                    <li><strong>Neural Networks:</strong> Computational models inspired by the human brain, consisting of layers of nodes (neurons) that process data.</li>
+                    <li><strong>Convolutional Neural Networks (CNNs):</strong> Specialized neural networks for processing grid-like data, such as images.</li>
+                    <li><strong>Recurrent Neural Networks (RNNs):</strong> Neural networks designed for sequential data, such as time series or text.</li>
+                    <li><strong>Generative Adversarial Networks (GANs):</strong> A class of neural networks used for generating new data samples similar to a given dataset.</li>
+                </ul>
+                <div class="example-box">
+                    <h4>Example:</h4>
+                    <p>In healthcare, a deep learning model can analyze medical images to detect diseases such as cancer with high accuracy, aiding doctors in early diagnosis and treatment planning.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-section">
+            <div>
+                <h3>Personalized GPTs</h3>
+                <p>Create your own GPT tailored to your needs with ease. Our personalized GPTs are designed to understand and generate human-like text based on your specific requirements.</p>
+                <div class="example-box">
+                    <h4>Example:</h4>
+                    <p>Imagine you are a family lawyer like Mario López in Chile. We can create a GPT that not only understands Chilean family law but also integrates your unique style and past case successes to provide highly accurate and personalized legal assistance to your clients.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Building Models: The Process</h2>
+        <div class="steps-container">
+            <div class="step-box">
+                <h3>Data Collection</h3>
+                <p>Gathering relevant data from various sources. This data must be clean, accurate, and representative of the problem we aim to solve.</p>
+            </div>
+            <div class="step-box">
+                <h3>Data Preprocessing</h3>
+                <p>Cleaning and transforming the data into a format suitable for model training. This step includes handling missing values, normalizing data, and feature engineering.</p>
+            </div>
+            <div class="step-box">
+                <h3>Model Selection</h3>
+                <p>Choosing the appropriate machine learning or deep learning algorithm based on the problem and the data. Common algorithms include decision trees, neural networks, and support vector machines.</p>
+            </div>
+            <div class="step-box">
+                <h3>Model Training</h3>
+                <p>Training the model on the preprocessed data. This involves feeding the data into the model and adjusting the model parameters to minimize prediction error.</p>
+            </div>
+            <div class="step-box">
+                <h3>Model Evaluation</h3>
+                <p>Assessing the model's performance using various metrics such as accuracy, precision, recall, and F1 score. This step ensures that the model generalizes well to new, unseen data.</p>
+            </div>
+            <div class="step-box">
+                <h3>Model Deployment</h3>
+                <p>Deploying the trained model into a production environment where it can start making predictions on new data.</p>
+            </div>
+            <div class="step-box">
+                <h3>Model Monitoring</h3>
+                <p>Continuously monitoring the model's performance and updating it as necessary to maintain accuracy and relevance.</p>
+            </div>
+        </div>
+
+        <h2>Advanced Techniques and Tools</h2>
+        <p>We utilize various advanced techniques and tools to ensure our models are robust and accurate. Some of these include:</p>
+        <ul>
+            <li><strong>Natural Language Processing (NLP):</strong> Techniques for understanding and generating human language, crucial for developing GPTs and other language-based models.</li>
+            <li><strong>Neural Networks:</strong> A type of machine learning model inspired by the human brain, particularly useful for image and speech recognition tasks.</li>
+            <li><strong>Convolutional Neural Networks (CNNs):</strong> Specialized neural networks for processing grid-like data, such as images.</li>
+            <li><strong>Recurrent Neural Networks (RNNs):</strong> Neural networks designed for sequential data, such as time series or text.</li>
+            <li><strong>Transfer Learning:</strong> Leveraging pre-trained models to solve new problems, significantly reducing the time and resources needed for training.</li>
+        </ul>
+
+        <div class="example-box">
+            <h4>Example:</h4>
+            <p>Consider a project where we use transfer learning to develop a model for detecting defects in manufacturing products. By using a pre-trained model on similar tasks and fine-tuning it with specific data from the client's manufacturing process, we can quickly and effectively develop a high-performing model.</p>
+        </div>
+
+        <p>Our approach combines the latest research and techniques with practical applications, ensuring that our clients receive state-of-the-art solutions tailored to their specific needs. For more information, check out references like "Deep Learning" by Ian Goodfellow and "Pattern Recognition and Machine Learning" by Christopher Bishop.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 AI For You. All rights reserved.</p>
+        <div class="social-icons mt-4">
+            <a href="#" class="text-lg mx-2"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-lg mx-2"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-lg mx-2"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="text-lg mx-2"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="mt-4">
+            <a href="#" class="text-lg mx-2">Privacy Policy</a>
+            <a href="#" class="text-lg mx-2">Terms of Service</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Enhancements -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazyload/2.0.0-beta.1/lazyload.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            // Hide loading spinner
+            $('.loading-spinner').removeClass('show');
+
+            const darkModeToggle = $('#dark-mode-toggle');
+            const darkModeToggleMobile = $('#dark-mode-toggle-mobile');
+            const menuToggle = $('#menu-toggle');
+            const mobileMenu = $('#mobile-menu');
+
+            // Dark Mode Toggle
+            darkModeToggle.click(function () {
+                $('body').toggleClass('dark-mode light-mode');
+                if ($('body').hasClass('dark-mode')) {
+                    $('#dark-mode-toggle').text('Light Mode');
+                    $('#dark-mode-toggle-mobile').text('Light Mode');
+                } else {
+                    $('#dark-mode-toggle').text('Dark Mode');
+                    $('#dark-mode-toggle-mobile').text('Dark Mode');
+                }
+            });
+
+            darkModeToggleMobile.click(function () {
+                $('body').toggleClass('dark-mode light-mode');
+                if ($('body').hasClass('dark-mode')) {
+                    $('#dark-mode-toggle').text('Light Mode');
+                    $('#dark-mode-toggle-mobile').text('Light Mode');
+                } else {
+                    $('#dark-mode-toggle').text('Dark Mode');
+                    $('#dark-mode-toggle-mobile').text('Dark Mode');
+                }
+            });
+
+            // Mobile Menu Toggle
+            menuToggle.click(function () {
+                mobileMenu.toggleClass('hidden');
+            });
+
+            // Lazy Loading
+            $('.lazy').lazyload();
+        });
+    </script>
+</body>
+
+</html>
