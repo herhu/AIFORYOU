@@ -16,6 +16,8 @@
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
+            padding: 0;
+            margin: 0;
         }
 
         body.dark-mode {
@@ -35,10 +37,16 @@
             background-color: rgba(18, 18, 18, 0.95);
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            padding: 0.75rem 1.5rem;
         }
 
         .navbar a {
             color: #e0e0e0;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #00bfa5;
         }
 
         .light-mode .navbar {
@@ -52,19 +60,84 @@
         }
 
         .header {
-            background: linear-gradient(90deg, #8e24aa, #00bfa5);
             text-align: center;
-            padding: 50px 20px;
+            padding: 100px 20px;
             color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .header h1,
+        .header p,
+        .header .cta {
+            z-index: 2;
+            position: relative;
         }
 
         .header h1 {
             font-size: 3rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 2s ease-in-out;
+            background: linear-gradient(90deg, #8e24aa, #00bfa5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .header p {
             font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        .header .cta {
+            background-color: #00bfa5;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: background-color 0.3s;
+        }
+
+        .header .cta:hover {
+            background-color: #008f75;
+        }
+
+        .content {
+            padding: 50px 20px;
+        }
+
+        .content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .content h2::after {
+            content: '';
+            width: 50px;
+            height: 5px;
+            background-color: #00bfa5;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .content p {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         .team-member {
@@ -231,6 +304,93 @@
                 transform-origin: center;
             }
         }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cube-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            transform: rotateX(-30deg) rotateY(30deg);
+            animation: rotateCube 10s infinite linear;
+        }
+
+        .cube {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(142, 36, 170, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cube.front {
+            transform: translateZ(100px);
+        }
+
+        .cube.back {
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        .cube.left {
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+
+        .cube.right {
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .cube.top {
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .cube.bottom {
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+        @keyframes rotateCube {
+            from {
+                transform: rotateX(-30deg) rotateY(0deg);
+            }
+
+            to {
+                transform: rotateX(-30deg) rotateY(360deg);
+            }
+        }
     </style>
 </head>
 
@@ -266,92 +426,107 @@
     </div>
 
     <!-- Header Section -->
-    <header class="header">
-        <h1>About Us</h1>
-        <p>Discover our journey and meet the team behind KÜTRAL.</p>
+    <header class="header hero min-h-screen flex items-center justify-center text-white relative">
+        <div class="content text-center z-10">
+            <h1 class="text-6xl font-bold">About Us</h1>
+            <p class="text-3xl mt-4">Discover our journey and meet the team behind KÜTRAL.</p>
+        </div>
+        <div class="cube-container">
+            <div class="cube front"></div>
+            <div class="cube back"></div>
+            <div class="cube left"></div>
+            <div class="cube right"></div>
+            <div class="cube top"></div>
+            <div class="cube bottom"></div>
+        </div>
     </header>
 
-    <!-- Team Section -->
-    <section class="team">
-        <h2>Our Team</h2>
-        <p>Meet the people who make KÜTRAL possible.</p>
-        <div class="grid">
-            <div class="member team-member">
-                <img src="https://via.placeholder.com/150" alt="Hernan Humana">
-                <h3>Hernan Humana</h3>
-                <p class="role">CEO</p>
-                <p class="bio">Hernan is a visionary leader with over 15 years of experience in the tech industry. Starting as a software developer, he quickly climbed the ranks through sheer determination and innovative thinking. His journey from a passionate coder to CEO of KÜTRAL is a testament to his dedication and leadership.</p>
-                <p class="bio">He has a keen eye for identifying emerging technologies and turning them into profitable ventures. Hernan's strategic mindset and ability to inspire his team have been crucial in shaping the company's vision and growth.</p>
-            </div>
-            <div class="member team-member">
-                <img src="https://via.placeholder.com/150" alt="Nicolas Salas">
-                <h3>Nicolas Salas</h3>
-                <p class="role">CTO</p>
-                <p class="bio">Nicolas has a background in computer science and artificial intelligence. His passion for technology and problem-solving skills have been instrumental in driving our technical vision forward. With over a decade of experience in AI and machine learning, Nicolas ensures that KÜTRAL stays at the cutting edge of technological innovation.</p>
-                <p class="bio">Nicolas joined the team with a vision to integrate advanced AI into everyday applications, making technology more accessible and efficient for users worldwide. His expertise and dedication to excellence have been pivotal in our technical advancements.</p>
-            </div>
-            <div class="member team-member">
-                <img src="https://via.placeholder.com/150" alt="Felix Espinoza">
-                <h3>Felix Espinoza</h3>
-                <p class="role">Lead Developer</p>
-                <p class="bio">Felix is a coding prodigy with a knack for creating robust and scalable solutions. His expertise in AI and machine learning ensures that our products are cutting-edge and efficient. Felix's journey from a junior developer to the Lead Developer at KÜTRAL is marked by his relentless pursuit of excellence and innovation.</p>
-                <p class="bio">He has been instrumental in developing and implementing our core technologies, making sure they are both powerful and user-friendly. Felix's ability to foresee industry trends and adapt quickly has made him an invaluable asset to the team.</p>
-            </div>
-        </div>
-    </section>
+    <!-- Main Container -->
+    <div class="container mx-auto p-6">
+        <main>
+            <!-- Team Section -->
+            <section class="team my-16 text-center">
+                <h2 class="text-4xl font-bold mb-6">Our Team</h2>
+                <p class="text-lg mb-6">Meet the people who make KÜTRAL possible.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="member team-member">
+                        <img src="https://via.placeholder.com/150" alt="Hernan Humana">
+                        <h3>Hernan Humana</h3>
+                        <p class="role">CEO</p>
+                        <p class="bio">Hernan is a visionary leader with over 15 years of experience in the tech industry. Starting as a software developer, he quickly climbed the ranks through sheer determination and innovative thinking. His journey from a passionate coder to CEO of KÜTRAL is a testament to his dedication and leadership.</p>
+                        <p class="bio">He has a keen eye for identifying emerging technologies and turning them into profitable ventures. Hernan's strategic mindset and ability to inspire his team have been crucial in shaping the company's vision and growth.</p>
+                    </div>
+                    <div class="member team-member">
+                        <img src="https://via.placeholder.com/150" alt="Nicolas Salas">
+                        <h3>Nicolas Salas</h3>
+                        <p class="role">CTO</p>
+                        <p class="bio">Nicolas has a background in computer science and artificial intelligence. His passion for technology and problem-solving skills have been instrumental in driving our technical vision forward. With over a decade of experience in AI and machine learning, Nicolas ensures that KÜTRAL stays at the cutting edge of technological innovation.</p>
+                        <p class="bio">Nicolas joined the team with a vision to integrate advanced AI into everyday applications, making technology more accessible and efficient for users worldwide. His expertise and dedication to excellence have been pivotal in our technical advancements.</p>
+                    </div>
+                    <div class="member team-member">
+                        <img src="https://via.placeholder.com/150" alt="Felix Espinoza">
+                        <h3>Felix Espinoza</h3>
+                        <p class="role">Lead Developer</p>
+                        <p class="bio">Felix is a coding prodigy with a knack for creating robust and scalable solutions. His expertise in AI and machine learning ensures that our products are cutting-edge and efficient. Felix's journey from a junior developer to the Lead Developer at KÜTRAL is marked by his relentless pursuit of excellence and innovation.</p>
+                        <p class="bio">He has been instrumental in developing and implementing our core technologies, making sure they are both powerful and user-friendly. Felix's ability to foresee industry trends and adapt quickly has made him an invaluable asset to the team.</p>
+                    </div>
+                </div>
+            </section>
 
-    <!-- Timeline Section -->
-    <section class="timeline">
-        <h2>Our Journey</h2>
-        <p>From humble beginnings to a leading AI agency, here’s how we got here.</p>
-        <ul>
-            <li>
-                <div class="content">
-                    <h3>2008 - The Beginning</h3>
-                    <p>Hernan Humana started his career as a software developer at a small tech startup. His early experiences in coding and project management laid the foundation for his future endeavors.</p>
-                </div>
-            </li>
-            <li>
-                <div class="content">
-                    <h3>2012 - A New Path</h3>
-                    <p>Nicolas Salas joined the team, bringing his expertise in AI and machine learning. Together, they began working on innovative projects that pushed the boundaries of technology.</p>
-                </div>
-            </li>
-            <li>
-                <div class="content">
-                    <h3>2015 - Growth and Expansion</h3>
-                    <p>As the team grew, Felix Espinoza came on board as the lead developer. His skills in building scalable systems and his passion for AI were crucial in developing our core technologies.</p>
-                </div>
-            </li>
-            <li>
-                <div class="content">
-                    <h3>2020 - Birth of KÜTRAL</h3>
-                    <p>The trio founded KÜTRAL with the vision of making AI accessible to everyone. They focused on creating personalized AI solutions that could adapt to various needs and industries.</p>
-                </div>
-            </li>
-            <li>
-                <div class="content">
-                    <h3>2023 - Leading the Industry</h3>
-                    <p>Today, KÜTRAL is recognized as a leader in the AI industry. Our team continues to innovate and push the limits of what’s possible with AI, driven by our mission to empower businesses and individuals alike.</p>
-                </div>
-            </li>
-        </ul>
-    </section>
+            <!-- Timeline Section -->
+            <section class="timeline my-16 text-center">
+                <h2 class="text-4xl font-bold mb-6">Our Journey</h2>
+                <p class="text-lg mb-6">From humble beginnings to a leading AI agency, here’s how we got here.</p>
+                <ul>
+                    <li>
+                        <div class="content">
+                            <h3 class="text-2xl font-bold mb-2">2008 - The Beginning</h3>
+                            <p>Hernan Humana started his career as a software developer at a small tech startup. His early experiences in coding and project management laid the foundation for his future endeavors.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="content">
+                            <h3 class="text-2xl font-bold mb-2">2012 - A New Path</h3>
+                            <p>Nicolas Salas joined the team, bringing his expertise in AI and machine learning. Together, they began working on innovative projects that pushed the boundaries of technology.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="content">
+                            <h3 class="text-2xl font-bold mb-2">2015 - Growth and Expansion</h3>
+                            <p>As the team grew, Felix Espinoza came on board as the lead developer. His skills in building scalable systems and his passion for AI were crucial in developing our core technologies.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="content">
+                            <h3 class="text-2xl font-bold mb-2">2020 - Birth of KÜTRAL</h3>
+                            <p>The trio founded KÜTRAL with the vision of making AI accessible to everyone. They focused on creating personalized AI solutions that could adapt to various needs and industries.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="content">
+                            <h3 class="text-2xl font-bold mb-2">2023 - Leading the Industry</h3>
+                            <p>Today, KÜTRAL is recognized as a leader in the AI industry. Our team continues to innovate and push the limits of what’s possible with AI, driven by our mission to empower businesses and individuals alike.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </main>
 
-    <!-- Footer -->
-    <footer class="py-6 text-center bg-gray-900 text-gray-400">
-        <p>&copy; 2024 AI For You. All rights reserved.</p>
-        <div class="social-icons mt-4">
-            <a href="#" class="text-lg mx-2"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="text-lg mx-2"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="text-lg mx-2"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="text-lg mx-2"><i class="fab fa-instagram"></i></a>
-        </div>
-        <div class="mt-4">
-            <a href="#" class="text-lg mx-2">Privacy Policy</a>
-            <a href="#" class="text-lg mx-2">Terms of Service</a>
-        </div>
-    </footer>
+        <!-- Footer -->
+        <footer class="py-6 text-center bg-gray-900 text-gray-400">
+            <p>&copy; 2024 AI For You. All rights reserved.</p>
+            <div class="social-icons mt-4">
+                <a href="#" class="text-lg mx-2"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-lg mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-lg mx-2"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-lg mx-2"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="mt-4">
+                <a href="#" class="text-lg mx-2">Privacy Policy</a>
+                <a href="#" class="text-lg mx-2">Terms of Service</a>
+            </div>
+        </footer>
+    </div>
 
     <!-- JavaScript for Enhancements -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -382,7 +557,7 @@
                 }
             });
 
-            darkModeToggleMobile click(function () {
+            darkModeToggleMobile.click(function () {
                 $('body').toggleClass('dark-mode light-mode');
                 if ($('body').hasClass('dark-mode')) {
                     $('#dark-mode-toggle').text('Light Mode');
