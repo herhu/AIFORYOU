@@ -1,4 +1,6 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -454,11 +456,26 @@
             transition: transform 0.1s ease-out;
         }
 
-        /* Slick Carousel Customizations */
+        /* Custom Styles for Testimonial Section */
+        .testimonial-carousel {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            min-height: 150px; /* Adjust this value according to your content */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
         .slick-dots {
             display: flex !important;
             justify-content: center;
-            margin-top: 20px;
+            padding: 10px 0;
+            list-style: none;
         }
 
         .slick-dots li {
@@ -466,35 +483,16 @@
         }
 
         .slick-dots li button {
+            background: #00bfa5;
+            border-radius: 50%;
             width: 12px;
             height: 12px;
-            border-radius: 50%;
-            background-color: #e0e0e0;
-            opacity: 0.5;
+            padding: 0;
+            border: none;
         }
 
         .slick-dots li.slick-active button {
-            background-color: #00bfa5;
-            opacity: 1;
-        }
-
-        .slick-prev,
-        .slick-next {
-            color: #00bfa5;
-            font-size: 24px;
-        }
-
-        .slick-prev:hover,
-        .slick-next:hover {
-            color: #008f75;
-        }
-
-        .slick-prev {
-            left: -30px;
-        }
-
-        .slick-next {
-            right: -30px;
+            background: #8e24aa;
         }
     </style>
 </head>
