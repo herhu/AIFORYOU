@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Progress - KÜTRAL</title>
+    <meta name="description" content="Learn more about the ongoing development of our AI services and the exciting features coming soon to KÜTRAL.">
+    <meta name="keywords" content="KÜTRAL, AI, sign up, progress, SaaS, AI services">
+    <meta name="author" content="AI For You, KÜTRAL">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.15.0/dist/full.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            padding: 0;
+            margin: 0;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        body.light-mode {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            padding: 0.75rem 1.5rem;
+        }
+
+        .navbar a {
+            color: #e0e0e0;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #00bfa5;
+        }
+
+        .light-mode .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            color: #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .light-mode .navbar a {
+            color: #333;
+        }
+
+        .header {
+            text-align: center;
+            padding: 100px 20px;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .header h1,
+        .header p,
+        .header .cta {
+            z-index: 2;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 2s ease-in-out;
+            background: linear-gradient(90deg, #8e24aa, #00bfa5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        .header .cta {
+            background-color: #00bfa5;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: background-color 0.3s;
+        }
+
+        .header .cta:hover {
+            background-color: #008f75;
+        }
+
+        .content {
+            padding: 50px 20px;
+        }
+
+        .content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .content h2::after {
+            content: '';
+            width: 50px;
+            height: 5px;
+            background-color: #00bfa5;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .content p {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-item {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-item:hover {
+            transform: scale(1.05);
+        }
+
+        .light-mode .feature-item {
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        .feature-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #00bfa5;
+        }
+
+        .feature-item p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .special-offers {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .special-offers h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .special-offers p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .special-offers a {
+            background-color: #00bfa5;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: background-color 0.3s;
+        }
+
+        .special-offers a:hover {
+            background-color: #008f75;
+        }
+
+        .cube-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            transform: rotateX(-30deg) rotateY(30deg);
+            animation: rotateCube 10s infinite linear;
+        }
+
+        .cube {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(142, 36, 170, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cube.front {
+            transform: translateZ(100px);
+        }
+
+        .cube.back {
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        .cube.left {
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+
+        .cube.right {
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .cube.top {
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .cube.bottom {
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+        @keyframes rotateCube {
+            from {
+                transform: rotateX(-30deg) rotateY(0deg);
+            }
+
+            to {
+                transform: rotateX(-30deg) rotateY(360deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="dark-mode">
+    <!-- Navigation Bar -->
+    <nav class="navbar p-4 flex justify-between items-center">
+        <a href="index.html" class="text-xl font-bold">KÜTRAL</a>
+        <div class="hidden md:flex">
+            <a href="index.html#about" class="text-lg mx-4">About Us</a>
+            <a href="index.html#services" class="text-lg mx-4">Services</a>
+            <a href="index.html#use-cases" class="text-lg mx-4">Use Cases</a>
+            <a href="index.html#pricing" class="text-lg mx-4">Pricing</a>
+            <a href="index.html#team" class="text-lg mx-4">Team</a>
+            <a href="index.html#contact" class="text-lg mx-4">Contact</a>
+            <a href="index.html#faq" class="text-lg mx-4">FAQ</a>
+            <button id="dark-mode-toggle" class="text-lg mx-4">Light Mode</button>
+        </div>
+        <div class="md:hidden">
+            <button id="menu-toggle" class="text-lg"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden">
+        <a href="index.html#about" class="block text-lg p-4">About Us</a>
+        <a href="index.html#services" class="block text-lg p-4">Services</a>
+        <a href="index.html#use-cases" class="block text-lg p-4">Use Cases</a>
+        <a href="index.html#pricing" class="block text-lg p-4">Pricing</a>
+        <a href="index.html#team" class="block text-lg p-4">Team</a>
+        <a href="index.html#contact" class="block text-lg p-4">Contact</a>
+        <a href="index.html#faq" class="block text-lg p-4">FAQ</a>
+        <button id="dark-mode-toggle-mobile" class="block text-lg p-4">Light Mode</button>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header hero min-h-screen flex items-center justify-center text-white relative">
+        <div class="content text-center z-10">
+            <h1 class="text-6xl font-bold">SIGN UP - COMING SOON</h1>
+            <p class="text-3xl mt-4">We are building something amazing. Stay tuned!</p>
+        </div>
+        <div class="cube-container">
+            <div class="cube front"></div>
+            <div class="cube back"></div>
+            <div class="cube left"></div>
+            <div class="cube right"></div>
+            <div class="cube top"></div>
+            <div class="cube bottom"></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto p-6">
+        <main class="content">
+            <h2>We're Working on It!</h2>
+            <p>At KÜTRAL, we are committed to bringing you the most advanced AI services, seamlessly integrated into a user-friendly platform. Our development team is hard at work building the core features that will empower you to create, customize, and manage your own AI models. Here's a sneak peek of what we're developing:</p>
+            <ul class="feature-list">
+                <li class="feature-item">
+                    <h3>Microservices Architecture</h3>
+                    <p>Our platform is built on a robust microservices architecture, allowing each AI service to be developed, deployed, and scaled independently. This ensures that you get the best performance and reliability.</p>
+                </li>
+                <li class="feature-item">
+                    <h3>Model Management System</h3>
+                    <p>Manage your AI models with ease through our intuitive interface. From creating and training models to deploying and monitoring them, everything will be at your fingertips.</p>
+                </li>
+                <li class="feature-item">
+                    <h3>Data Management</h3>
+                    <p>Efficiently manage and preprocess your data with our powerful data pipeline, ensuring your AI models are trained on high-quality data for the best results.</p>
+                </li>
+                <li class="feature-item">
+                    <h3>API Integration</h3>
+                    <p>Seamlessly integrate AI services into your applications with our comprehensive API, designed for security, scalability, and ease of use.</p>
+                </li>
+                <li class="feature-item">
+                    <h3>Continuous Learning</h3>
+                    <p>Our platform supports continuous learning and improvement, allowing your AI models to evolve with new data and deliver increasingly accurate predictions.</p>
+                </li>
+            </ul>
+        </main>
+
+        <!-- Special Offers Section -->
+        <section class="special-offers mt-16">
+            <h2 class="text-4xl font-bold mb-6">Special Offers</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="special-offer p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-building"></i> PYMEs</h3>
+                    <p class="text-lg mb-4">Tailored solutions for small and medium-sized businesses. Contact us for a consultation.</p>
+                    <a href="#contact" class="btn-primary">Contact Us</a>
+                </div>
+                <div class="special-offer p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-user-graduate"></i> Students</h3>
+                    <p class="text-lg mb-4">Special rates for students looking to explore AI and machine learning. Contact us for details.</p>
+                    <a href="#contact" class="btn-primary">Contact Us</a>
+                </div>
+                <div class="special-offer p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-flask"></i> Experimental</h3>
+                    <p class="text-lg mb-4">Innovative solutions for experimental projects and research. Reach out to discuss your needs.</p>
+                    <a href="#contact" class="btn-primary">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center bg-gray-900 text-gray-400">
+        <p>&copy; 2024 AI For You. All rights reserved.</p>
+        <div class="social-icons mt-4">
+            <a href="#" class="text-lg mx-2"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-lg mx-2"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-lg mx-2"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="text-lg mx-2"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="mt-4">
+            <a href="#" class="text-lg mx-2">Privacy Policy</a>
+            <a href="#" class="text-lg mx-2">Terms of Service</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Enhancements -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazyload/2.0.0-beta.1/lazyload.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            // Hide loading spinner
+            $('.loading-spinner').removeClass('show');
+
+            const darkModeToggle = $('#dark-mode-toggle');
+            const darkModeToggleMobile = $('#dark-mode-toggle-mobile');
+            const menuToggle = $('#menu-toggle');
+            const mobileMenu = $('#mobile-menu');
+
+            // Dark Mode Toggle
+            darkModeToggle.click(function () {
+                $('body').toggleClass('dark-mode light-mode');
+                if ($('body').hasClass('dark-mode')) {
+                    $('#dark-mode-toggle').text('Light Mode');
+                    $('#dark-mode-toggle-mobile').text('Light Mode');
+                } else {
+                    $('#dark-mode-toggle').text('Dark Mode');
+                    $('#dark-mode-toggle-mobile').text('Dark Mode');
+                }
+            });
+
+            darkModeToggleMobile.click(function () {
+                $('body').toggleClass('dark-mode light-mode');
+                if ($('body').hasClass('dark-mode')) {
+                    $('#dark-mode-toggle').text('Light Mode');
+                    $('#dark-mode-toggle-mobile').text('Light Mode');
+                } else {
+                    $('#dark-mode-toggle').text('Dark Mode');
+                    $('#dark-mode-toggle-mobile').text('Dark Mode');
+                }
+            });
+
+            // Mobile Menu Toggle
+            menuToggle.click(function () {
+                mobileMenu.toggleClass('hidden');
+            });
+
+            // Lazy Loading
+            $('.lazy').lazyload();
+        });
+    </script>
+</body>
+
+</html>
