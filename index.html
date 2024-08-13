@@ -1,6 +1,4 @@
-<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -455,6 +453,49 @@
             transform: rotateX(0deg) rotateY(0deg);
             transition: transform 0.1s ease-out;
         }
+
+        /* Slick Carousel Customizations */
+        .slick-dots {
+            display: flex !important;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .slick-dots li {
+            margin: 0 5px;
+        }
+
+        .slick-dots li button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #e0e0e0;
+            opacity: 0.5;
+        }
+
+        .slick-dots li.slick-active button {
+            background-color: #00bfa5;
+            opacity: 1;
+        }
+
+        .slick-prev,
+        .slick-next {
+            color: #00bfa5;
+            font-size: 24px;
+        }
+
+        .slick-prev:hover,
+        .slick-next:hover {
+            color: #008f75;
+        }
+
+        .slick-prev {
+            left: -30px;
+        }
+
+        .slick-next {
+            right: -30px;
+        }
     </style>
 </head>
 
@@ -497,7 +538,7 @@
     <!-- Full-screen Header -->
     <header class="hero min-h-screen flex items-center justify-center text-white relative">
         <div class="content text-center z-10">
-             <h1 class="text-6xl font-bold">
+            <h1 class="text-6xl font-bold">
                 AI.FOR<span class="animated-text"> YOU</span>
             </h1>
             <p class="slogan text-3xl mt-4">AGENCY</p>
@@ -531,17 +572,14 @@
                 <div class="service p-6 rounded-lg shadow-md tooltip">
                     <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-robot"></i> Personalized GPTs</h3>
                     <p>Create your own GPT tailored to your needs with ease.</p>
-                 
                 </div>
                 <div class="service p-6 rounded-lg shadow-md tooltip">
                     <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-brain"></i> Machine Learning Services</h3>
                     <p>Leverage our expertise in machine learning to gain insights and predictions.</p>
-        
                 </div>
                 <div class="service p-6 rounded-lg shadow-md tooltip">
                     <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-project-diagram"></i> Deep Learning Models</h3>
                     <p>Utilize advanced deep learning models for more complex and accurate predictions.</p>
-         
                 </div>
             </section>
 
