@@ -581,30 +581,39 @@
                 </div>
             </section>
 
-            <!-- Use Cases Section -->
-            <section id="use-cases" class="use-cases my-16 text-center">
-                <h2 class="text-4xl font-bold mb-6">Use Cases</h2>
-                <div class="use-case mb-6 p-6 rounded-lg shadow-md">
-                    <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-gavel"></i> Legal Professional Assistant</h3>
-                    <p>Mario López, a family lawyer in Chile, uses a personalized GPT to manage his cases, answer legal inquiries, and provide efficient client service.</p>
-                </div>
-                <div class="use-case mb-6 p-6 rounded-lg shadow-md">
-                    <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-stethoscope"></i> Healthcare Professional Assistant</h3>
-                    <p>Dr. Laura Martínez, a psychologist in Spain, employs a personalized GPT to schedule appointments, manage patient records, and send reminders.</p>
-                </div>
-                <div class="use-case mb-6 p-6 rounded-lg shadow-md">
-                    <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-chart-line"></i> Financial Advisor Assistant</h3>
-                    <p>Juan Pérez, a financial advisor in Mexico, uses a personalized GPT for data analysis, report generation, and client management while ensuring compliance with regulations.</p>
-                </div>
-                <div class="use-case mb-6 p-6 rounded-lg shadow-md">
-                    <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-chalkboard-teacher"></i> Educational Professional Assistant</h3>
-                    <p>Prof. Carlos Ramírez, a university professor in Colombia, leverages a personalized GPT to organize lesson plans, interact with students, and evaluate assignments.</p>
-                </div>
-                <div class="use-case mb-6 p-6 rounded-lg shadow-md">
-                    <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-store"></i> Small Business Assistant</h3>
-                    <p>Ana Torres, the owner of a clothing store in Argentina, uses a personalized GPT to manage inventory, interact with customers, and coordinate marketing efforts.</p>
-                </div>
-            </section>
+<!-- Use Cases Section -->
+<section id="use-cases" class="use-cases my-16 text-center">
+    <h2 class="text-4xl font-bold mb-6">Use Cases</h2>
+    <div class="use-case mb-6 p-6 rounded-lg shadow-md">
+        <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-gavel"></i> Legal Professional Assistant</h3>
+        <p>Mario López, a family lawyer in Chile, uses a personalized GPT to manage his cases, answer legal inquiries, and provide efficient client service.</p>
+    </div>
+    <div class="use-case mb-6 p-6 rounded-lg shadow-md">
+        <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-stethoscope"></i> Healthcare Professional Assistant</h3>
+        <p>Dr. Laura Martínez, a psychologist in Spain, employs a personalized GPT to schedule appointments, manage patient records, and send reminders.</p>
+    </div>
+    <div class="use-case mb-6 p-6 rounded-lg shadow-md">
+        <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-truck"></i> Sales Prediction and Inventory Management for Lazlo Truck</h3>
+        <p>Lazlo Truck, a truck seller in Hungary, uses Deep Learning and Machine Learning to predict sales trends and manage inventory levels, ensuring that the right trucks are available at the right time. This approach reduces inventory costs and optimizes the sales process.</p>
+    </div>
+    <div class="use-case mb-6 p-6 rounded-lg shadow-md">
+        <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-shopping-cart"></i> Inventory Management for a Local Retail Store</h3>
+        <p>Emma Johnson, the owner of a small boutique in Argentina, uses our Machine Learning Services to manage inventory levels efficiently, preventing both overstock and stockouts, while predicting seasonal demand.</p>
+    </div>
+    <div class="use-case mb-6 p-6 rounded-lg shadow-md">
+        <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-wrench"></i> Predictive Maintenance for a Small Manufacturing Workshop</h3>
+        <p>XYZ Fabrication, a small manufacturing workshop, leverages our Deep Learning Models to predict equipment maintenance needs, reducing unexpected downtimes and extending the life of their machines.</p>
+    </div>
+    <div class="use-case mb-6 p-6 rounded-lg shadow-md">
+        <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-store"></i> Customer Engagement for a Local Cafe</h3>
+        <p>Lucas Silva, the owner of a neighborhood cafe in Brazil, uses a personalized GPT to handle customer inquiries, send promotional offers, and gather feedback, enhancing customer loyalty and engagement.</p>
+    </div>
+    <div class="use-case mb-6 p-6 rounded-lg shadow-md">
+        <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-book"></i> Online Course Management for a Small Education Business</h3>
+        <p>Sarah Patel, who runs a small online education platform in India, utilizes our Machine Learning Services to analyze student performance and optimize course content, providing a more personalized learning experience.</p>
+    </div>
+</section>
+
 
             <!-- Pricing Section -->
             <section id="pricing" class="pricing my-16 text-center">
@@ -948,7 +957,7 @@
             document.getElementById('contact-form').addEventListener('submit', function(event) {
                 event.preventDefault();
                 // these IDs from the previous steps
-                emailjs.sendForm('service_qb74jcf','template_cf697lj','contact_form')
+                emailjs.sendForm('service_qb74jcf', 'template_cf697lj', this)
                     .then(() => {
                         console.log('SUCCESS!');
                     }, (error) => {
