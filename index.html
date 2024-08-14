@@ -948,7 +948,7 @@
             document.getElementById('contact-form').addEventListener('submit', function(event) {
                 event.preventDefault();
                 // these IDs from the previous steps
-                emailjs.sendForm('contact_service', 'contact_form', this)
+                emailjs.sendForm('service_qb74jcf', 'template_cf697lj', 'contact_service', 'contact_form', this)
                     .then(() => {
                         console.log('SUCCESS!');
                     }, (error) => {
