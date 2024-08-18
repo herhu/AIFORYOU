@@ -5,18 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KÜTRAL - AI Solutions, GPT Services, Machine Learning & Deep Learning</title>
-    <meta name="description" content="KÜTRAL offers personalized GPTs, AI solutions, machine learning, and deep learning services to make AI accessible and beneficial for everyone.">
-    <meta name="keywords" content="KÜTRAL, AI solutions, GPT services, machine learning, deep learning, AI development, AI consultancy">
+    <meta name="description"
+        content="KÜTRAL offers personalized GPTs, AI solutions, machine learning, and deep learning services to make AI accessible and beneficial for everyone.">
+    <meta name="keywords"
+        content="KÜTRAL, AI solutions, GPT services, machine learning, deep learning, AI development, AI consultancy">
     <meta name="author" content="AI For You, KÜTRAL">
-    <link rel="icon" href="https://raw.githubusercontent.com/herhu/AIFORYOU/main/Kutral_logo_favicon.png" type="image/x-icon">
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/herhu/AIFORYOU/main/Kutral_logo_favicon.png" type="image/x-icon">
+    <link rel="icon" href="https://raw.githubusercontent.com/herhu/AIFORYOU/main/img/Kutral_logo_favicon.png"
+        type="image/x-icon">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/herhu/AIFORYOU/main/img/Kutral_logo_favicon.png"
+        type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.15.0/dist/full.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/css/main.css"> <!-- Link to external CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
     <meta property="og:title" content="KÜTRAL - AI Solutions, GPT Services, Machine Learning & Deep Learning">
-    <meta property="og:description" content="Explore personalized AI solutions with KÜTRAL. We offer tailored GPTs, machine learning, and deep learning services.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/herhu/AIFORYOU/main/Kutral_logo_seo.png">
+    <meta property="og:description"
+        content="Explore personalized AI solutions with KÜTRAL. We offer tailored GPTs, machine learning, and deep learning services.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/herhu/AIFORYOU/main/img/Kutral_logo_seo.png">
     <meta property="og:url" content="https://kutral.agency">
     <meta property="og:type" content="website">
     <script type="application/ld+json">
@@ -25,7 +31,7 @@
       "@type": "Organization",
       "name": "KÜTRAL",
       "url": "https://kutral.agency",
-      "logo": "https://raw.githubusercontent.com/herhu/AIFORYOU/main/logo.png",
+      "logo": "https://raw.githubusercontent.com/herhu/AIFORYOU/main/img/logo.png",
       "description": "KÜTRAL offers AI solutions, personalized GPTs, machine learning, and deep learning services.",
       "sameAs": [
         "https://www.facebook.com/",
@@ -35,489 +41,6 @@
       ]
     }
     </script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body.dark-mode {
-            background-color: #121212;
-            color: #e0e0e0;
-        }
-
-        body.light-mode {
-            background-color: #f9f9f9;
-            color: #333;
-        }
-
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background-color: rgba(18, 18, 18, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .navbar a {
-            color: #e0e0e0;
-        }
-
-        .light-mode .navbar {
-            background-color: rgba(255, 255, 255, 0.95);
-            color: #333;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .light-mode .navbar a {
-            color: #333;
-        }
-
-        .hero {
-            position: relative;
-            height: 100vh;
-            overflow: hidden;
-            perspective: 1000px;
-        }
-
-        .hero video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transform: translate(-50%, -50%);
-            z-index: -1;
-        }
-
-        .content h1,
-        .content .slogan,
-        .content .btn-primary {
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        .content h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(90deg, #8e24aa, #00bfa5);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: textChange 6s infinite linear, float 3s ease-in-out infinite;
-        }
-
-        @keyframes textChange {
-            0%,
-            33% {
-                content: "AI.FOR.YOU";
-            }
-
-            34%,
-            66% {
-                content: "AI.FOR.ME";
-            }
-
-            67%,
-            100% {
-                content: "AI.FOR.ALL";
-            }
-        }
-
-        @keyframes float {
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        .content .slogan {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #00bfa5;
-        }
-
-        .content .btn-primary {
-            background-color: #00bfa5;
-            color: #121212;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.25rem;
-            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-        }
-
-        .content .btn-primary:hover {
-            background-color: #00796b;
-            transform: scale(1.05);
-        }
-
-        .light-mode .content .btn-primary {
-            color: #f9f9f9;
-        }
-
-        .service,
-        .use-case,
-        .pricing-plan,
-        .special-offer {
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .service:hover,
-        .use-case:hover,
-        .pricing-plan:hover,
-        .special-offer:hover {
-            transform: scale(1.05);
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        .tooltip {
-            position: relative;
-            display: inline-block;
-        }
-
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            width: 120px;
-            background-color: black;
-            color: #fff;
-            text-align: center;
-            border-radius: 6px;
-            padding: 5px;
-            position: absolute;
-            z-index: 1;
-            bottom: 125%;
-            left: 50%;
-            margin-left: -60px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            display: none;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .back-to-top.show {
-            display: flex;
-        }
-
-        .loading-spinner {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: none;
-        }
-
-        .loading-spinner.show {
-            display: block;
-        }
-
-        .gradient-bg {
-            background: linear-gradient(90deg, rgba(142, 36, 170, 0.7) 0%, rgba(0, 191, 165, 0.7) 100%);
-            background-size: 200% 200%;
-            animation: gradientAnimation 15s ease infinite;
-        }
-
-        @keyframes gradientAnimation {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        .statistics {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 4rem;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #8e24aa;
-        }
-
-        .stat p {
-            font-size: 1rem;
-        }
-
-        .call-to-action {
-            background-color: #00bfa5;
-            color: #121212;
-            padding: 2rem 1rem;
-            text-align: center;
-            border-radius: 0.25rem;
-            margin-top: 4rem;
-        }
-
-        .call-to-action h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .call-to-action p {
-            font-size: 1.25rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .call-to-action .btn {
-            background-color: #121212;
-            color: #00bfa5;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.25rem;
-            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-        }
-
-        .call-to-action .btn:hover {
-            background-color: #1c1c1c;
-            transform: scale(1.05);
-        }
-
-        .light-mode .call-to-action {
-            background-color: #e0f7fa;
-            color: #00796b;
-        }
-
-        .light-mode .call-to-action .btn {
-            background-color: #00796b;
-            color: #e0f7fa;
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-            cursor: pointer;
-        }
-
-        .scroll-indicator i {
-            font-size: 2rem;
-            color: #fff;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%,
-            20%,
-            50%,
-            80%,
-            100% {
-                transform: translateY(0);
-            }
-
-            40% {
-                transform: translateY(-10px);
-            }
-
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-
-        .lazy {
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-
-        .lazy.loaded {
-            opacity: 1;
-        }
-
-        .service,
-        .use-case,
-        .pricing-plan,
-        .faq-item {
-            background-color: #1e1e1e;
-            color: #e0e0e0;
-        }
-
-        .light-mode .service,
-        .light-mode .use-case,
-        .light-mode .pricing-plan,
-        .light-mode .faq-item {
-            background-color: #ffffff;
-            color: #333333;
-        }
-
-        .team-member {
-            background-color: #1e1e1e;
-            color: #e0e0e0;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .team-member:hover {
-            transform: scale(1.05);
-        }
-
-        .light-mode .team-member {
-            background-color: #ffffff;
-            color: #333333;
-        }
-
-        @media (min-width: 768px) {
-            .content h1 {
-                font-size: 4rem;
-            }
-
-            .content .slogan {
-                font-size: 2rem;
-            }
-
-            .stat h3 {
-                font-size: 3rem;
-            }
-
-            .stat p {
-                font-size: 1.25rem;
-            }
-
-            .call-to-action h2 {
-                font-size: 2.5rem;
-            }
-
-            .call-to-action p {
-                font-size: 1.25rem;
-            }
-        }
-
-        /* 3D Cube Animation */
-        .cube-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 200px;
-            height: 200px;
-            transform-style: preserve-3d;
-            transform: rotateX(-30deg) rotateY(30deg);
-            animation: rotateCube 10s infinite linear;
-        }
-
-        .cube {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background-color: rgba(142, 36, 170, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .cube.front {
-            transform: translateZ(100px);
-        }
-
-        .cube.back {
-            transform: rotateY(180deg) translateZ(100px);
-        }
-
-        .cube.left {
-            transform: rotateY(-90deg) translateZ(100px);
-        }
-
-        .cube.right {
-            transform: rotateY(90deg) translateZ(100px);
-        }
-
-        .cube.top {
-            transform: rotateX(90deg) translateZ(100px);
-        }
-
-        .cube.bottom {
-            transform: rotateX(-90deg) translateZ(100px);
-        }
-
-        @keyframes rotateCube {
-            from {
-                transform: rotateX(-30deg) rotateY(0deg);
-            }
-
-            to {
-                transform: rotateX(-30deg) rotateY(360deg);
-            }
-        }
-
-        /* Mouse Move Effect */
-        body {
-            perspective: 1000px;
-        }
-
-        .content {
-            transform: rotateX(0deg) rotateY(0deg);
-            transition: transform 0.1s ease-out;
-        }
-
-        /* Custom Styles for Testimonial Section */
-        .testimonial-carousel {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .testimonial {
-            min-height: 150px; /* Adjust this value according to your content */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .slick-dots {
-            display: flex !important;
-            justify-content: center;
-            padding: 10px 0;
-            list-style: none;
-        }
-
-        .slick-dots li {
-            margin: 0 5px;
-        }
-
-        .slick-dots li button {
-            background: #00bfa5;
-            border-radius: 50%;
-            width: 12px;
-            height: 12px;
-            padding: 0;
-            border: none;
-        }
-
-        .slick-dots li.slick-active button {
-            background: #8e24aa;
-        }
-    </style>
 </head>
 
 <body class="dark-mode">
@@ -528,7 +51,8 @@
 
     <!-- Navigation Bar -->
     <nav class="navbar p-4 flex justify-between items-center">
-        <a href="#"><img src="https://raw.githubusercontent.com/herhu/AIFORYOU/main/logo.png" alt="KÜTRAL Logo" class="h-8 w-auto"></a>
+        <a href="#"><img src="https://raw.githubusercontent.com/herhu/AIFORYOU/main/img/logo.png" alt="KÜTRAL Logo"
+                class="h-8 w-auto"></a>
         <div class="hidden md:flex">
             <a href="aboutus.html" class="text-lg mx-4">About Us</a>
             <a href="ourwork.html" class="text-lg mx-4">Services</a>
@@ -584,7 +108,9 @@
             <!-- Introduction Section -->
             <section id="about" class="intro my-16 text-center gradient-bg rounded-lg p-6">
                 <h2 class="text-4xl font-bold mb-6">About Us</h2>
-                <p class="text-lg mb-6">Welcome to AI For You! We offer personalized GPTs and advanced services using machine learning and deep learning models. Our mission is to make AI accessible and beneficial for everyone.</p>
+                <p class="text-lg mb-6">Welcome to AI For You! We offer personalized GPTs and advanced services using
+                    machine learning and deep learning models. Our mission is to make AI accessible and beneficial for
+                    everyone.</p>
                 <a href="aboutus.html" class="btn btn-primary">Learn More</a>
             </section>
 
@@ -599,43 +125,63 @@
                     <p>Leverage our expertise in machine learning to gain insights and predictions.</p>
                 </div>
                 <div class="service p-6 rounded-lg shadow-md tooltip">
-                    <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-project-diagram"></i> Deep Learning Models</h3>
+                    <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-project-diagram"></i> Deep Learning Models
+                    </h3>
                     <p>Utilize advanced deep learning models for more complex and accurate predictions.</p>
                 </div>
             </section>
 
-<!-- Use Cases Section -->
-<section id="use-cases" class="use-cases my-16 text-center">
-    <h2 class="text-4xl font-bold mb-6">Use Cases</h2>
-    <div class="use-case mb-6 p-6 rounded-lg shadow-md">
-        <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-gavel"></i> Legal Professional Assistant</h3>
-        <p>Mario López, a family lawyer in Chile, uses a personalized GPT to manage his cases, answer legal inquiries, and provide efficient client service.</p>
-    </div>
-    <div class="use-case mb-6 p-6 rounded-lg shadow-md">
-        <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-stethoscope"></i> Healthcare Professional Assistant</h3>
-        <p>Dr. Laura Martínez, a psychologist in Spain, employs a personalized GPT to schedule appointments, manage patient records, and send reminders.</p>
-    </div>
-    <div class="use-case mb-6 p-6 rounded-lg shadow-md">
-        <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-truck"></i> Sales Prediction and Inventory Management for Lazlo Truck</h3>
-        <p>Lazlo Truck, a truck seller in Hungary, uses Deep Learning and Machine Learning to predict sales trends and manage inventory levels, ensuring that the right trucks are available at the right time. This approach reduces inventory costs and optimizes the sales process.</p>
-    </div>
-    <div class="use-case mb-6 p-6 rounded-lg shadow-md">
-        <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-shopping-cart"></i> Inventory Management for a Local Retail Store</h3>
-        <p>Emma Johnson, the owner of a small boutique in Argentina, uses our Machine Learning Services to manage inventory levels efficiently, preventing both overstock and stockouts, while predicting seasonal demand.</p>
-    </div>
-    <div class="use-case mb-6 p-6 rounded-lg shadow-md">
-        <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-wrench"></i> Predictive Maintenance for a Small Manufacturing Workshop</h3>
-        <p>XYZ Fabrication, a small manufacturing workshop, leverages our Deep Learning Models to predict equipment maintenance needs, reducing unexpected downtimes and extending the life of their machines.</p>
-    </div>
-    <div class="use-case mb-6 p-6 rounded-lg shadow-md">
-        <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-store"></i> Customer Engagement for a Local Cafe</h3>
-        <p>Lucas Silva, the owner of a neighborhood cafe in Brazil, uses a personalized GPT to handle customer inquiries, send promotional offers, and gather feedback, enhancing customer loyalty and engagement.</p>
-    </div>
-    <div class="use-case mb-6 p-6 rounded-lg shadow-md">
-        <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-book"></i> Online Course Management for a Small Education Business</h3>
-        <p>Sarah Patel, who runs a small online education platform in India, utilizes our Machine Learning Services to analyze student performance and optimize course content, providing a more personalized learning experience.</p>
-    </div>
-</section>
+            <!-- Use Cases Section -->
+            <section id="use-cases" class="use-cases my-16 text-center">
+                <h2 class="text-4xl font-bold mb-6">Use Cases</h2>
+                <div class="use-case mb-6 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-gavel"></i> Legal Professional Assistant
+                    </h3>
+                    <p>Mario López, a family lawyer in Chile, uses a personalized GPT to manage his cases, answer legal
+                        inquiries, and provide efficient client service.</p>
+                </div>
+                <div class="use-case mb-6 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-stethoscope"></i> Healthcare Professional
+                        Assistant</h3>
+                    <p>Dr. Laura Martínez, a psychologist in Spain, employs a personalized GPT to schedule appointments,
+                        manage patient records, and send reminders.</p>
+                </div>
+                <div class="use-case mb-6 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-truck"></i> Sales Prediction and Inventory
+                        Management for Lazlo Truck</h3>
+                    <p>Lazlo Truck, a truck seller in Hungary, uses Deep Learning and Machine Learning to predict sales
+                        trends and manage inventory levels, ensuring that the right trucks are available at the right
+                        time. This approach reduces inventory costs and optimizes the sales process.</p>
+                </div>
+                <div class="use-case mb-6 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-shopping-cart"></i> Inventory Management
+                        for a Local Retail Store</h3>
+                    <p>Emma Johnson, the owner of a small boutique in Argentina, uses our Machine Learning Services to
+                        manage inventory levels efficiently, preventing both overstock and stockouts, while predicting
+                        seasonal demand.</p>
+                </div>
+                <div class="use-case mb-6 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-wrench"></i> Predictive Maintenance for a
+                        Small Manufacturing Workshop</h3>
+                    <p>XYZ Fabrication, a small manufacturing workshop, leverages our Deep Learning Models to predict
+                        equipment maintenance needs, reducing unexpected downtimes and extending the life of their
+                        machines.</p>
+                </div>
+                <div class="use-case mb-6 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-store"></i> Customer Engagement for a Local
+                        Cafe</h3>
+                    <p>Lucas Silva, the owner of a neighborhood cafe in Brazil, uses a personalized GPT to handle
+                        customer inquiries, send promotional offers, and gather feedback, enhancing customer loyalty and
+                        engagement.</p>
+                </div>
+                <div class="use-case mb-6 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-book"></i> Online Course Management for a
+                        Small Education Business</h3>
+                    <p>Sarah Patel, who runs a small online education platform in India, utilizes our Machine Learning
+                        Services to analyze student performance and optimize course content, providing a more
+                        personalized learning experience.</p>
+                </div>
+            </section>
 
 
             <!-- Pricing Section -->
@@ -682,17 +228,20 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="special-offer p-6 rounded-lg shadow-md">
                         <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-building"></i> PYMEs</h3>
-                        <p class="text-lg mb-4">Tailored solutions for small and medium-sized businesses. Contact us for a consultation.</p>
+                        <p class="text-lg mb-4">Tailored solutions for small and medium-sized businesses. Contact us for
+                            a consultation.</p>
                         <a href="#contact" class="btn btn-primary">Contact Us</a>
                     </div>
                     <div class="special-offer p-6 rounded-lg shadow-md">
                         <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-user-graduate"></i> Students</h3>
-                        <p class="text-lg mb-4">Special rates for students looking to explore AI and machine learning. Contact us for details.</p>
+                        <p class="text-lg mb-4">Special rates for students looking to explore AI and machine learning.
+                            Contact us for details.</p>
                         <a href="#contact" class="btn btn-primary">Contact Us</a>
                     </div>
                     <div class="special-offer p-6 rounded-lg shadow-md">
                         <h3 class="text-2xl text-teal-400 mb-4"><i class="fas fa-flask"></i> Experimental</h3>
-                        <p class="text-lg mb-4">Innovative solutions for experimental projects and research. Reach out to discuss your needs.</p>
+                        <p class="text-lg mb-4">Innovative solutions for experimental projects and research. Reach out
+                            to discuss your needs.</p>
                         <a href="#contact" class="btn btn-primary">Contact Us</a>
                     </div>
                 </div>
@@ -703,15 +252,21 @@
                 <h2 class="text-4xl font-bold mb-6">Testimonials</h2>
                 <div class="testimonial-carousel">
                     <div class="testimonial p-6 rounded-lg shadow-md">
-                        <p class="text-lg mb-4">"AI For You has revolutionized the way we handle our customer support. The personalized GPTs provide accurate and quick responses, enhancing our service efficiency."</p>
+                        <p class="text-lg mb-4">"AI For You has revolutionized the way we handle our customer support.
+                            The personalized GPTs provide accurate and quick responses, enhancing our service
+                            efficiency."</p>
                         <p class="font-bold text-teal-400">- Sarah Thompson, Customer Service Manager at TechCorp</p>
                     </div>
                     <div class="testimonial p-6 rounded-lg shadow-md">
-                        <p class="text-lg mb-4">"Thanks to AI For You, our market analysis capabilities have significantly improved. The insights we gain from their machine learning services are invaluable."</p>
+                        <p class="text-lg mb-4">"Thanks to AI For You, our market analysis capabilities have
+                            significantly improved. The insights we gain from their machine learning services are
+                            invaluable."</p>
                         <p class="font-bold text-teal-400">- Michael Johnson, Marketing Director at MarketMinds</p>
                     </div>
                     <div class="testimonial p-6 rounded-lg shadow-md">
-                        <p class="text-lg mb-4">"Implementing AI For You's solutions has streamlined our operations. The deep learning models have boosted our predictive accuracy, helping us make better decisions."</p>
+                        <p class="text-lg mb-4">"Implementing AI For You's solutions has streamlined our operations. The
+                            deep learning models have boosted our predictive accuracy, helping us make better
+                            decisions."</p>
                         <p class="font-bold text-teal-400">- Linda Garcia, COO at FinancePro</p>
                     </div>
                 </div>
@@ -733,27 +288,30 @@
                 </div>
             </section>
 
-<!-- Team Section -->
-<section id="team" class="team my-16 text-center">
-    <h2 class="text-4xl font-bold mb-6">Our Team</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="team-member p-6 rounded-lg shadow-md">
-            <img src="https://raw.githubusercontent.com/herhu/AIFORYOU/main/PHOTO-2024-08-05-11-41-28.jpg" alt="Hernan Humana" class="w-24 h-24 mx-auto rounded-full mb-4">
-            <h3 class="text-2xl text-teal-400 mb-4">Hernan Humana</h3>
-            <p class="text-lg">CEO</p>
-        </div>
-        <div class="team-member p-6 rounded-lg shadow-md">
-            <img src="https://raw.githubusercontent.com/herhu/AIFORYOU/main/de985ca4-4a81-42ba-9254-ee752f6fd333.JPG" alt="Team Member" class="w-24 h-24 mx-auto rounded-full mb-4">
-            <h3 class="text-2xl text-teal-400 mb-4">Nicolas Salas</h3>
-            <p class="text-lg">CTO</p>
-        </div>
-        <div class="team-member p-6 rounded-lg shadow-md">
-            <img src="https://raw.githubusercontent.com/herhu/AIFORYOU/main/80D85776-80F1-4BFF-8AED-AF9E1C088E23.JPG" alt="Team Member" class="w-24 h-24 mx-auto rounded-full mb-4">
-            <h3 class="text-2xl text-teal-400 mb-4">Felix Espinoza</h3>
-            <p class="text-lg">Lead Developer</p>
-        </div>
-    </div>
-</section>
+            <!-- Team Section -->
+            <section id="team" class="team my-16 text-center">
+                <h2 class="text-4xl font-bold mb-6">Our Team</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="team-member p-6 rounded-lg shadow-md">
+                        <img src="https://raw.githubusercontent.com/herhu/AIFORYOU/main/img/PHOTO-2024-08-05-11-41-28.jpg"
+                            alt="Hernan Humana" class="w-24 h-24 mx-auto rounded-full mb-4">
+                        <h3 class="text-2xl text-teal-400 mb-4">Hernan Humana</h3>
+                        <p class="text-lg">CEO</p>
+                    </div>
+                    <div class="team-member p-6 rounded-lg shadow-md">
+                        <img src="https://raw.githubusercontent.com/herhu/AIFORYOU/main/img/de985ca4-4a81-42ba-9254-ee752f6fd333.JPG"
+                            alt="Team Member" class="w-24 h-24 mx-auto rounded-full mb-4">
+                        <h3 class="text-2xl text-teal-400 mb-4">Nicolas Salas</h3>
+                        <p class="text-lg">CTO</p>
+                    </div>
+                    <div class="team-member p-6 rounded-lg shadow-md">
+                        <img src="https://raw.githubusercontent.com/herhu/AIFORYOU/main/img/80D85776-80F1-4BFF-8AED-AF9E1C088E23.JPG"
+                            alt="Team Member" class="w-24 h-24 mx-auto rounded-full mb-4">
+                        <h3 class="text-2xl text-teal-400 mb-4">Felix Espinoza</h3>
+                        <p class="text-lg">Lead Developer</p>
+                    </div>
+                </div>
+            </section>
 
 
             <!-- FAQ Section -->
@@ -761,15 +319,18 @@
                 <h2 class="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
                 <div class="faq-item p-6 rounded-lg shadow-md mb-4">
                     <h3 class="text-2xl text-teal-400 mb-4">What is a personalized GPT?</h3>
-                    <p>A personalized GPT is a custom-tailored AI model that can generate human-like text based on your specific requirements and data.</p>
+                    <p>A personalized GPT is a custom-tailored AI model that can generate human-like text based on your
+                        specific requirements and data.</p>
                 </div>
                 <div class="faq-item p-6 rounded-lg shadow-md mb-4">
                     <h3 class="text-2xl text-teal-400 mb-4">How can I get started with AI For You?</h3>
-                    <p>You can get started by signing up for one of our plans or contacting us for a customized solution that fits your needs.</p>
+                    <p>You can get started by signing up for one of our plans or contacting us for a customized solution
+                        that fits your needs.</p>
                 </div>
                 <div class="faq-item p-6 rounded-lg shadow-md mb-4">
                     <h3 class="text-2xl text-teal-400 mb-4">What support options are available?</h3>
-                    <p>We offer email support for all plans, and priority support for Pro and Enterprise plans. Enterprise clients also get a dedicated account manager and 24/7 support.</p>
+                    <p>We offer email support for all plans, and priority support for Pro and Enterprise plans.
+                        Enterprise clients also get a dedicated account manager and 24/7 support.</p>
                 </div>
             </section>
 
@@ -784,18 +345,22 @@
             <section id="contact" class="contact my-16 text-center gradient-bg rounded-lg p-6">
                 <h2 class="text-4xl font-bold mb-6">Contact Us</h2>
                 <form class="max-w-xl mx-auto p-6 rounded-lg shadow-md" id="contact-form">
-                       <input type="hidden" name="contact_number" id="contact_number">
+                    <input type="hidden" name="contact_number" id="contact_number">
                     <div class="mb-4">
                         <label for="name" class="block text-left text-gray-300">Name</label>
-                        <input type="text" id="name" name="user_name" class="w-full p-2 border border-gray-600 rounded mt-2 bg-gray-800 text-white" required>
+                        <input type="text" id="name" name="user_name"
+                            class="w-full p-2 border border-gray-600 rounded mt-2 bg-gray-800 text-white" required>
                     </div>
                     <div class="mb-4">
                         <label for="email" class="block text-left text-gray-300">Email</label>
-                        <input type="email" id="email" name="user_email" class="w-full p-2 border border-gray-600 rounded mt-2 bg-gray-800 text-white" required>
+                        <input type="email" id="email" name="user_email"
+                            class="w-full p-2 border border-gray-600 rounded mt-2 bg-gray-800 text-white" required>
                     </div>
                     <div class="mb-4">
                         <label for="message" class="block text-left text-gray-300">Message</label>
-                        <textarea id="message" name="message" class="w-full p-2 border border-gray-600 rounded mt-2 bg-gray-800 text-white" rows="4" required></textarea>
+                        <textarea id="message" name="message"
+                            class="w-full p-2 border border-gray-600 rounded mt-2 bg-gray-800 text-white" rows="4"
+                            required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -807,7 +372,9 @@
                 <p class="text-lg mb-6">Sign up for our newsletter to get the latest updates and news.</p>
                 <form class="max-w-lg mx-auto p-6 rounded-lg shadow-md" id="newsletter-form">
                     <div class="mb-4">
-                        <input type="email" id="newsletter-email" class="w-full p-2 border border-gray-600 rounded mt-2 bg-gray-800 text-white" placeholder="Your Email" required>
+                        <input type="email" id="newsletter-email"
+                            class="w-full p-2 border border-gray-600 rounded mt-2 bg-gray-800 text-white"
+                            placeholder="Your Email" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Subscribe</button>
                 </form>
@@ -821,7 +388,8 @@
                 <a href="#" class="text-lg mx-2"><i class="fab fa-facebook"></i></a>
                 <a href="#" class="text-lg mx-2"><i class="fab fa-twitter"></i></a>
                 <a href="#" class="text-lg mx-2"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/kutral.agency" class="text-lg mx-2"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/kutral.agency" class="text-lg mx-2"><i
+                        class="fab fa-instagram"></i></a>
             </div>
             <div class="mt-4">
                 <a href="#" class="text-lg mx-2">Privacy Policy</a>
@@ -846,168 +414,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-    $(document).ready(function () {
-
-        // Text Change Animation
-        const animatedText = document.querySelector('.animated-text');
-        const words = [" YOU", " NOW"];
-        let wordIndex = 0;
-
-        setInterval(() => {
-            animatedText.style.opacity = '0';
-            setTimeout(() => {
-                animatedText.textContent = words[wordIndex];
-                animatedText.style.opacity = '1';
-                wordIndex = (wordIndex + 1) % words.length;
-            }, 500);
-        }, 2000);
-
-        // Hide loading spinner
-        $('.loading-spinner').removeClass('show');
-
-        const servicesSection = $('.services');
-        const backToTopButton = $('.back-to-top');
-        const darkModeToggle = $('#dark-mode-toggle');
-        const darkModeToggleMobile = $('#dark-mode-toggle-mobile');
-        const menuToggle = $('#menu-toggle');
-        const mobileMenu = $('#mobile-menu');
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    servicesSection.addClass('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        observer.observe(servicesSection[0]);
-
-        $(window).scroll(function () {
-            if ($(window).scrollTop() > 300) {
-                backToTopButton.addClass('show');
-            } else {
-                backToTopButton.removeClass('show');
-            }
-        });
-
-        backToTopButton.click(function (e) {
-            e.preventDefault();
-            $('html, body').animate({ scrollTop: 0 }, '300');
-        });
-
-        $('#chatbot button').click(function () {
-            alert('Chatbot is under development!');
-        });
-
-        // Dark Mode Toggle
-        darkModeToggle.click(function () {
-            $('body').toggleClass('dark-mode light-mode');
-            if ($('body').hasClass('dark-mode')) {
-                $('#dark-mode-toggle').text('Light Mode');
-                $('#dark-mode-toggle-mobile').text('Light Mode');
-            } else {
-                $('#dark-mode-toggle').text('Dark Mode');
-                $('#dark-mode-toggle-mobile').text('Dark Mode');
-            }
-        });
-
-        darkModeToggleMobile.click(function () {
-            $('body').toggleClass('dark-mode light-mode');
-            if ($('body').hasClass('dark-mode')) {
-                $('#dark-mode-toggle').text('Light Mode');
-                $('#dark-mode-toggle-mobile').text('Light Mode');
-            } else {
-                $('#dark-mode-toggle').text('Dark Mode');
-                $('#dark-mode-toggle-mobile').text('Dark Mode');
-            }
-        });
-
-        // Mobile Menu Toggle
-        menuToggle.click(function () {
-            mobileMenu.toggleClass('hidden');
-        });
-
-        // Testimonials Carousel
-        $('.testimonial-carousel').slick({
-            dots: true,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 1,
-            adaptiveHeight: true,
-            autoplay: true,
-            autoplaySpeed: 3000 // Slides will change every 3 seconds
-        });
-
-        // Animated Statistics
-        $('.stat h3').each(function () {
-            var $this = $(this);
-            jQuery({ Counter: 0 }).animate({ Counter: $this.data('count') }, {
-                duration: 2000,
-                easing: 'swing',
-                step: function () {
-                    $this.text(Math.ceil(this.Counter));
-                }
-            });
-        });
-
-        // Scroll Indicator
-        $('.scroll-indicator').click(function () {
-            $('html, body').animate({
-                scrollTop: $('#about').offset().top
-            }, 800);
-        });
-
-        // Form Validation
-        $('#contact-form').validate();
-        $('#newsletter-form').validate();
-
-        // Mouse Move Effect
-        document.addEventListener('mousemove', (e) => {
-            const x = (window.innerWidth / 2 - e.clientX) / 50;
-            const y = (window.innerHeight / 2 - e.clientY) / 50;
-
-            $('.content').css('transform', `rotateX(${y}deg) rotateY(${x}deg)`);
-        });
-
-        emailjs.init({
-            publicKey: "Ks4MZpyptEO1YLpNx",
-        });
-
-        window.onload = function() {
-            document.getElementById('contact_number').value = Math.floor(Math.random() * 1000000);
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-                // Send email using EmailJS
-                emailjs.sendForm('service_qb74jcf', 'template_cf697lj', this)
-                    .then(() => {
-                        // Success handling
-                        showSuccessMessage();
-                        clearForm();
-                    }, (error) => {
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-
-        // Function to show success message
-        function showSuccessMessage() {
-            const message = `<div class="p-4 mt-4 text-green-700 bg-green-200 border border-green-300 rounded">
-                                <strong>Success!</strong> Your message has been sent. We will get back to you soon.
-                             </div>`;
-            $('#contact-form').append(message);
-        }
-
-        // Function to clear the form
-        function clearForm() {
-            $('#contact-form').trigger("reset");
-        }
-
-    });
-</script>
-
+    <script src="/js/main.js"></script> <!-- Link to external JS -->
 </body>
 
 </html>
