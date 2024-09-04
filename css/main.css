@@ -483,3 +483,138 @@ body {
 .slick-dots li.slick-active button {
     background: #8e24aa;
 }
+
+/* Footer Styles */
+footer {
+    background-color: #1e1e1e; /* Dark background for contrast */
+    color: #e0e0e0; /* Light text for readability */
+    padding: 2rem 1rem; /* Space around footer content */
+}
+
+footer .container {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile-first approach */
+    gap: 2rem; /* Space between sections */
+}
+
+footer h4 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #ffffff; /* White headings for contrast */
+    font-weight: bold;
+}
+
+footer p,
+footer a {
+    font-size: 0.875rem;
+    color: #e0e0e0; /* Default text color */
+}
+
+footer a {
+    transition: color 0.3s ease-in-out;
+}
+
+footer a:hover {
+    color: #00bfa5; /* Hover effect for links */
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+footer .social-icons a {
+    color: #e0e0e0;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #00bfa5; /* Hover color for social icons */
+}
+
+footer .newsletter-form {
+    display: flex;
+    flex-direction: column;
+}
+
+footer input[type="email"] {
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    background-color: #121212;
+    color: #e0e0e0;
+    border: 1px solid #333;
+    margin-bottom: 0.75rem;
+    transition: border-color 0.3s ease;
+}
+
+footer input[type="email"]::placeholder {
+    color: #777; /* Placeholder color */
+}
+
+footer input[type="email"]:focus {
+    border-color: #00bfa5; /* Focus state for input */
+    outline: none;
+}
+
+footer button {
+    background-color: #00bfa5;
+    color: #121212;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+footer button:hover {
+    background-color: #00796b; /* Hover state for buttons */
+    transform: scale(1.05);
+}
+
+/* Footer bottom section */
+footer .border-t {
+    border-top: 1px solid #333; /* Divider between sections */
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+}
+
+footer .text-sm {
+    font-size: 0.75rem;
+    color: #999; /* Muted text for legal links */
+}
+
+footer .text-sm a {
+    margin: 0 0.5rem;
+}
+
+footer .text-sm a:hover {
+    color: #00bfa5; /* Hover effect for legal links */
+}
+
+/* Responsive footer for larger screens */
+@media (min-width: 768px) {
+    footer .container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on medium+ screens */
+    }
+
+    footer .social-icons {
+        justify-content: flex-start;
+    }
+
+    footer .newsletter-form {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    footer input[type="email"] {
+        flex: 1;
+        margin-bottom: 0; /* Adjust for inline layout */
+        margin-right: 0.75rem;
+    }
+
+    footer button {
+        flex-shrink: 0; /* Ensure button doesn't shrink */
+    }
+}
